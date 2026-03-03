@@ -26,11 +26,7 @@
             --transition: all 0.3s ease;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Rubik', sans-serif;
@@ -38,1795 +34,546 @@
             color: var(--dark);
             line-height: 1.6;
             min-height: 100vh;
-            position: relative;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
-        /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 20px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .logo { display: flex; align-items: center; gap: 15px; }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50px; height: 50px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 4px 8px rgba(67,97,238,0.3);
         }
 
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 5px;
-        }
+        .logo-icon i { color: white; font-size: 1.5rem; }
 
         .logo-text h1 {
             font-size: 1.8rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;
         }
 
-        .logo-text p {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 5px;
-        }
+        .logo-text p { font-size: 0.9rem; color: var(--gray); margin-top: 2px; }
 
-        nav {
-            display: flex;
-            gap: 30px;
-        }
+        nav { display: flex; gap: 15px; }
 
         nav a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            padding: 8px 16px;
-            border-radius: 10px;
+            color: var(--dark); text-decoration: none; font-weight: 500;
+            font-size: 1rem; transition: var(--transition); padding: 8px 16px; border-radius: 10px;
         }
 
-        nav a:hover, nav a.active {
-            background: rgba(67, 97, 238, 0.1);
-            color: var(--primary);
-        }
+        nav a:hover, nav a.active { background: rgba(67, 97, 238, 0.1); color: var(--primary); }
 
-        .user-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+        main { padding: 40px 0; }
 
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.05));
-            border-radius: var(--border-radius);
-            padding: 60px 40px;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-radius: var(--border-radius); padding: 60px 40px; margin-bottom: 40px;
+            text-align: center; position: relative; overflow: hidden;
         }
 
         .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
+            content: ""; position: absolute; top: -50%; right: -20%;
+            width: 300px; height: 300px;
             background: linear-gradient(135deg, var(--accent), transparent);
-            border-radius: 50%;
-            opacity: 0.2;
+            border-radius: 50%; opacity: 0.2;
         }
 
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-            position: relative;
-        }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 20px; color: var(--dark); position: relative; }
+        .hero p { font-size: 1.2rem; color: var(--gray); max-width: 700px; margin: 0 auto 30px; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        /* Buttons */
         .btn {
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
+            padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 1rem;
+            cursor: pointer; transition: var(--transition); border: none;
+            display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(67, 97, 238, 0.05);
-            transform: translateY(-3px);
-        }
-
-        .btn-danger {
-            background: var(--danger);
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background: #e11d48;
-            transform: translateY(-3px);
-        }
-
-        .btn-success {
-            background: var(--success);
-            color: white;
-        }
-
-        .btn-success:hover {
-            background: #22c55e;
-            transform: translateY(-3px);
-        }
-
-        .btn-warning {
-            background: var(--warning);
-            color: white;
-        }
-
-        .btn-warning:hover {
-            background: #d97706;
-            transform: translateY(-3px);
-        }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .btn-secondary { background: white; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: rgba(67, 97, 238, 0.05); transform: translateY(-3px); }
+        .btn-warning { background: var(--warning); color: white; }
+        .btn-warning:hover { background: #d97706; transform: translateY(-3px); }
 
         /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-        }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 50px; }
 
         .stat-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
+            background: white; border-radius: var(--border-radius); padding: 30px;
+            box-shadow: var(--shadow); text-align: center; transition: var(--transition);
             border-top: 5px solid var(--primary);
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+        .stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .stat-label { color: var(--gray); font-size: 1rem; }
+
+        /* Topics */
+        .topics-section { margin-bottom: 40px; }
+
+        .topics-section h2 {
+            font-size: 1.8rem; color: var(--dark); margin-bottom: 25px;
+            display: flex; align-items: center; gap: 12px;
         }
 
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
+        .topics-section h2 i { color: var(--primary); }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
         }
 
-        .stat-label {
-            color: var(--gray);
-            font-size: 1rem;
+        .topic-card {
+            background: white; border-radius: var(--border-radius); padding: 35px 20px;
+            box-shadow: var(--shadow); text-align: center; cursor: pointer;
+            transition: var(--transition); border: 2px solid transparent; position: relative; overflow: hidden;
         }
 
-        /* Bulk Actions */
-        .bulk-actions {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 2px solid #f1f5f9;
+        .topic-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 5px; background: var(--topic-color, var(--primary));
         }
 
-        .bulk-actions-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .topic-card:hover {
+            transform: translateY(-10px); box-shadow: var(--shadow-hover);
+            border-color: var(--topic-color, var(--primary));
         }
 
-        .select-all-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            color: var(--dark);
+        .topic-icon {
+            width: 70px; height: 70px; border-radius: 50%;
+            background: var(--topic-color-light, rgba(67,97,238,0.1));
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px; font-size: 1.8rem;
+            color: var(--topic-color, var(--primary)); transition: var(--transition);
         }
 
-        .select-all-checkbox input {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+        .topic-card:hover .topic-icon { transform: scale(1.15) rotate(5deg); }
+
+        .topic-name { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+
+        .topic-count {
+            font-size: 0.85rem; color: var(--gray); background: #f1f5f9;
+            padding: 4px 12px; border-radius: 20px; display: inline-block;
         }
 
-        .selected-count {
-            color: var(--primary);
-            font-weight: 600;
-            background: rgba(67, 97, 238, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 25px; font-size: 1rem; color: var(--gray);
         }
 
-        /* Questions Section */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; font-weight: 500; transition: var(--transition); }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb i { font-size: 0.8rem; color: #cbd5e1; }
 
-        .section-header h2 {
-            font-size: 2rem;
-            color: var(--dark);
-        }
-
-        .filters {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+        /* Section header */
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .section-header h2 { font-size: 2rem; color: var(--dark); }
+        .filters { display: flex; gap: 15px; align-items: center; }
 
         .filter-select {
-            padding: 12px 20px;
-            border-radius: 10px;
-            border: 2px solid #e2e8f0;
-            background: white;
-            font-family: 'Rubik', sans-serif;
-            color: var(--dark);
-            font-size: 1rem;
-            cursor: pointer;
+            padding: 12px 20px; border-radius: 10px; border: 2px solid #e2e8f0;
+            background: white; font-family: 'Rubik', sans-serif; color: var(--dark); font-size: 1rem; cursor: pointer;
         }
 
         /* Questions Grid */
-        .questions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
+        .questions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 50px; }
 
         .question-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #f1f5f9;
+            background: white; border-radius: var(--border-radius); padding: 25px;
+            box-shadow: var(--shadow); transition: var(--transition);
+            position: relative; overflow: hidden; border: 1px solid #f1f5f9;
         }
 
-        .question-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
+        .question-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
 
-        .question-card.selected {
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.2);
-        }
+        .question-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
 
-        .question-checkbox {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
-            z-index: 10;
-        }
+        .category-badge { padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
 
-        .question-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            margin-right: 30px;
-        }
-
-        .category-badge {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(67, 97, 238, 0.1);
-            color: var(--primary);
-        }
-
-        .difficulty-badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
+        .difficulty-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
         .difficulty-easy { background: rgba(34, 197, 94, 0.1); color: #16a34a; }
         .difficulty-medium { background: rgba(245, 158, 11, 0.1); color: #d97706; }
         .difficulty-hard { background: rgba(239, 68, 68, 0.1); color: #dc2626; }
 
-        .question-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--dark);
-            margin-right: 30px;
-        }
-
-        .question-description {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
+        .question-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
+        .question-description { color: var(--gray); margin-bottom: 20px; line-height: 1.7; }
 
         .question-image {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            background: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed #e2e8f0;
-            cursor: pointer;
-            transition: var(--transition);
+            width: 100%; height: 180px; border-radius: 12px; overflow: hidden;
+            margin-bottom: 20px; background: #f8fafc; display: flex; align-items: center; justify-content: center;
+            border: 2px dashed #e2e8f0; cursor: pointer; transition: var(--transition);
         }
 
-        .question-image:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
+        .question-image:hover { border-color: var(--primary); transform: scale(1.02); }
+        .question-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .question-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .question-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
+        .question-actions { display: flex; gap: 10px; margin-top: 20px; }
 
         .action-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            flex: 1; padding: 12px; border-radius: 10px; font-weight: 500;
+            font-size: 0.95rem; cursor: pointer; transition: var(--transition); border: none;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
         }
 
         /* Solution Panel */
         .solution-panel {
-            max-height: 0;
-            overflow: hidden;
+            max-height: 0; overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            background: #f8fafc;
-            border-radius: 12px;
-            margin-top: 0;
+            background: #f8fafc; border-radius: 12px; margin-top: 0;
         }
 
-        .solution-panel.open {
-            max-height: 1000px;
-            margin-top: 20px;
-            padding: 25px;
-            border: 1px solid #e2e8f0;
-        }
+        .solution-panel.open { max-height: 1000px; margin-top: 20px; padding: 25px; border: 1px solid #e2e8f0; }
+        .solution-title { color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; display: block; }
 
-        .solution-title {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* Access Panel */
-        .access-panel {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-            margin: 40px 0;
-            text-align: center;
-            border: 2px dashed var(--primary);
-        }
-
-        .access-panel h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .access-btn {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .access-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 206, 201, 0.3);
-        }
-
-        /* Add Question Panel */
-        .add-question-panel {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-            margin: 40px 0;
-            border: 2px solid rgba(67, 97, 238, 0.2);
-            display: none;
-        }
-
-        .panel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .panel-header h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
-        }
-
-        .close-panel {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-panel:hover {
-            color: var(--danger);
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-family: 'Rubik', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: white;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        /* File Upload */
-        .file-upload-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .file-upload {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px dashed #eee;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #f9f9f9;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .file-upload:hover {
-            border-color: var(--primary);
-            background: #f0f3ff;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .file-upload-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            opacity: 0.7;
-        }
-
-        .file-upload-text {
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 0 10px;
-        }
-
-        .image-preview {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid #eee;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f9f9f9;
-        }
-
-        .image-preview img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .btn-add {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .btn-add:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 206, 201, 0.3);
-        }
-
-        /* Modals */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 40px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .modal-content h3 {
-            color: var(--dark);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            text-align: center;
-        }
-
-        .modal-content p {
-            color: var(--gray);
-            margin-bottom: 30px;
-            text-align: center;
-            line-height: 1.7;
-        }
-
-        .code-input {
-            width: 100%;
-            padding: 18px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1.5rem;
-            font-family: 'Rubik', sans-serif;
-            text-align: center;
-            letter-spacing: 10px;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .code-input:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .error-message {
-            color: var(--danger);
-            font-size: 0.9rem;
-            margin-top: 10px;
-            text-align: center;
-            display: none;
-        }
-
-        /* Delete Password Modal */
-        .delete-modal .modal-content {
-            max-width: 450px;
-        }
-
-        .delete-modal .modal-content h3 {
-            color: var(--danger);
-        }
-
-        .delete-modal .modal-content p {
-            color: var(--gray);
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-right: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* Reset Button Container */
-        .reset-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .reset-btn {
-            background: var(--danger);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .reset-btn:hover {
-            background: #e74c3c;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
-        }
-
-        /* PDF Booklet Sidebar */
+        /* Booklet */
         .booklet-sidebar {
-            position: fixed;
-            top: 0;
-            left: -450px;
-            width: 420px;
-            height: 100%;
-            background: white;
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-            z-index: 2500;
-            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            border-left: 5px solid var(--primary);
+            position: fixed; top: 0; left: -450px; width: 420px; height: 100%;
+            background: white; box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            z-index: 2500; transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; flex-direction: column; border-left: 5px solid var(--primary);
         }
 
-        .booklet-sidebar.open {
-            left: 0;
-        }
+        .booklet-sidebar.open { left: 0; }
 
         .booklet-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center;
         }
 
-        .booklet-header h3 {
-            font-size: 1.5rem;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .booklet-header h3 i {
-            font-size: 1.8rem;
-        }
+        .booklet-header h3 { font-size: 1.5rem; margin: 0; display: flex; align-items: center; gap: 12px; }
 
         .close-booklet {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255,255,255,0.2); border: none; width: 40px; height: 40px;
+            border-radius: 50%; color: white; font-size: 1.2rem; cursor: pointer;
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
         }
 
-        .close-booklet:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
+        .close-booklet:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
 
-        .booklet-actions {
-            padding: 20px;
-            background: #f8fafc;
-            display: flex;
-            gap: 12px;
-            border-bottom: 1px solid #e2e8f0;
-        }
+        .booklet-actions { padding: 20px; background: #f8fafc; display: flex; gap: 12px; border-bottom: 1px solid #e2e8f0; }
 
         .booklet-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            background: white;
-            color: var(--dark);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            flex: 1; padding: 12px; border-radius: 8px; border: none; background: white;
+            color: var(--dark); font-weight: 500; cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .booklet-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-        }
+        .booklet-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgba(0,0,0,0.15); }
+        .booklet-btn.download { background: var(--success); color: white; }
+        .booklet-btn.print { background: var(--warning); color: white; }
+        .booklet-btn.fullscreen { background: var(--primary); color: white; }
 
-        .booklet-btn.download {
-            background: var(--success);
-            color: white;
-        }
-
-        .booklet-btn.print {
-            background: var(--warning);
-            color: white;
-        }
-
-        .booklet-btn.fullscreen {
-            background: var(--primary);
-            color: white;
-        }
-
-        .booklet-container {
-            flex: 1;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .booklet-viewer {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: #f8fafc;
-        }
+        .booklet-container { flex: 1; overflow: hidden; position: relative; }
+        .booklet-viewer { width: 100%; height: 100%; border: none; background: #f8fafc; }
 
         .booklet-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2400;
-            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 2400; display: none;
         }
 
-        .booklet-overlay.active {
-            display: block;
-        }
+        .booklet-overlay.active { display: block; }
 
         .booklet-toggle-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
+            position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 200;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            color: white; border: none; border-radius: 50%; cursor: pointer;
+            z-index: 200; box-shadow: 0 5px 15px rgba(67,97,238,0.4);
+            transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
         }
 
-        .booklet-toggle-btn:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.6);
+        .booklet-toggle-btn:hover { transform: scale(1.1) rotate(15deg); }
+        .booklet-toggle-btn.open { left: 440px; background: var(--danger); transform: rotate(180deg); }
+        .booklet-toggle-btn.open:hover { transform: scale(1.1) rotate(200deg); }
+
+        .booklet-progress { height: 4px; background: #e2e8f0; position: relative; }
+        .booklet-progress-bar { position: absolute; height: 100%; background: linear-gradient(to right, var(--accent), var(--primary)); width: 0%; transition: width 0.3s ease; }
+
+        .pdf-nav {
+            display: flex; align-items: center; justify-content: center;
+            gap: 15px; padding: 15px; background: white; border-bottom: 1px solid #e2e8f0;
         }
 
-        .booklet-toggle-btn.open {
-            left: 440px;
-            background: var(--danger);
-            transform: rotate(180deg);
+        .pdf-nav-btn {
+            width: 40px; height: 40px; border-radius: 50%; border: 2px solid #e2e8f0;
+            background: white; color: var(--dark); cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center;
         }
 
-        .booklet-toggle-btn.open:hover {
-            transform: scale(1.1) rotate(200deg);
-            box-shadow: 0 8px 20px rgba(244, 63, 94, 0.6);
-        }
+        .pdf-nav-btn:hover:not(:disabled) { background: var(--primary); color: white; border-color: var(--primary); }
+        .pdf-nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .page-counter { font-weight: 600; color: var(--dark); min-width: 80px; text-align: center; }
 
-        .booklet-toggle-btn i {
-            transition: transform 0.3s ease;
-        }
+        .pdf-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--gray); }
+        .pdf-loader i { font-size: 3rem; margin-bottom: 20px; color: var(--primary); opacity: 0.7; }
+        .pdf-loader p { font-size: 1.1rem; text-align: center; max-width: 300px; }
 
-        .booklet-toggle-btn.open i {
-            transform: rotate(-180deg);
-        }
-
-        .booklet-progress {
-            height: 4px;
-            background: #e2e8f0;
-            position: relative;
-            margin-top: 10px;
-        }
-
-        .booklet-progress-bar {
-            position: absolute;
-            height: 100%;
-            background: linear-gradient(to right, var(--accent), var(--primary));
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .stats, .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .questions-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .file-upload-container {
-                grid-template-columns: 1fr;
-            }
-            .booklet-sidebar {
-                width: 380px;
-                left: -400px;
-            }
-            .booklet-toggle-btn.open {
-                left: 390px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            
-            .stats, .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-            }
-            
-            .filters {
-                width: 100%;
-                flex-direction: column;
-            }
-            
-            .filter-select {
-                width: 100%;
-            }
-            
-            .add-question-panel {
-                padding: 30px 20px;
-            }
-            
-            .bulk-actions {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-            
-            .booklet-sidebar {
-                width: 100%;
-                left: -100%;
-            }
-            
-            .booklet-toggle-btn {
-                bottom: 20px;
-                left: 20px;
-            }
-            
-            .booklet-toggle-btn.open {
-                left: calc(100% - 70px);
-            }
-        }
-
-        /* Question Detail Page Styles */
+        /* Question Detail */
         .question-detail-page {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            z-index: 3000;
-            overflow-y: auto;
-            animation: slideIn 0.3s ease;
+            display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100%;
+            background: white; z-index: 3000; overflow-y: auto;
         }
 
         .question-detail-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 10;
         }
 
-        .question-detail-header h2 {
-            font-size: 1.8rem;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .question-detail-header h2 { font-size: 1.8rem; margin: 0; display: flex; align-items: center; gap: 15px; }
 
         .close-detail {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255,255,255,0.2); border: none; width: 50px; height: 50px;
+            border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer;
+            transition: var(--transition); display: flex; align-items: center; justify-content: center;
         }
 
-        .close-detail:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
+        .close-detail:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
 
-        .question-detail-content {
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .question-detail-content { padding: 40px; max-width: 1200px; margin: 0 auto; }
 
-        .detail-meta {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .detail-badge {
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .detail-title {
-            font-size: 2.2rem;
-            color: var(--dark);
-            margin-bottom: 25px;
-            line-height: 1.3;
-        }
+        .detail-meta { display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
+        .detail-badge { padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        .detail-title { font-size: 2.2rem; color: var(--dark); margin-bottom: 25px; line-height: 1.3; }
 
         .detail-description {
-            font-size: 1.1rem;
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f1f5f9;
-        }
-
-        .detail-images {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
+            font-size: 1.1rem; color: var(--gray); line-height: 1.8;
+            margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid #f1f5f9;
         }
 
         .detail-image-container {
-            background: #f8fafc;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            border: 2px solid #e2e8f0;
+            background: #f8fafc; border-radius: var(--border-radius);
+            padding: 30px; box-shadow: var(--shadow); border: 2px solid #e2e8f0; margin-bottom: 30px;
         }
 
-        .detail-image-container h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .detail-image-container h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 
         .detail-image {
-            width: 100%;
-            max-height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 2px solid #e2e8f0;
+            width: 100%; max-height: 500px; border-radius: 12px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            background: white; border: 2px solid #e2e8f0;
         }
 
-        .detail-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
+        .detail-image img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
         .detail-solution {
-            background: #f8fafc;
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin-top: 40px;
-            box-shadow: var(--shadow);
-            border: 2px solid #e2e8f0;
+            background: #f8fafc; border-radius: var(--border-radius);
+            padding: 40px; margin-top: 40px; box-shadow: var(--shadow); border: 2px solid #e2e8f0;
         }
 
-        .detail-solution h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .detail-solution h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .solution-text { font-size: 1.1rem; line-height: 1.8; color: var(--dark); margin-bottom: 30px; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 60px 0 30px; margin-top: 80px; }
+        .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+        .footer-section h3 {
+            font-size: 1.3rem; margin-bottom: 25px; color: white; position: relative; padding-bottom: 10px;
         }
 
-        .solution-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--dark);
-            margin-bottom: 30px;
+        .footer-section h3::after { content: ''; position: absolute; bottom: 0; right: 0; width: 50px; height: 3px; background: var(--accent); }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #cbd5e1; text-decoration: none; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
+        .footer-links a:hover { color: white; padding-right: 5px; }
+
+        .footer-bottom { text-align: center; padding-top: 30px; margin-top: 40px; border-top: 1px solid #334155; color: #94a3b8; font-size: 0.9rem; }
+
+        .empty-state { grid-column: 1 / -1; text-align: center; padding: 60px 20px; }
+
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+        @keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(100%); } }
+        @keyframes notifIn { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes notifOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-100%); opacity: 0; } }
+
+        @media (max-width: 1200px) {
+            .topics-grid { grid-template-columns: repeat(3, 1fr); }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
         }
 
-        .solution-toggle-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 20px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            .hero h2 { font-size: 2rem; }
+            .hero { padding: 40px 20px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; gap: 20px; align-items: flex-start; }
+            .filters { width: 100%; flex-direction: column; }
+            .filter-select { width: 100%; }
+            .topics-grid { grid-template-columns: repeat(2, 1fr); }
+            .booklet-sidebar { width: 100%; left: -100%; }
+            .booklet-toggle-btn { bottom: 20px; left: 20px; }
+            .booklet-toggle-btn.open { left: calc(100% - 70px); }
         }
 
-        .solution-toggle-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-        }
-
-        /* Animation for detail page */
-        @keyframes slideIn {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
-        }
-
-        @keyframes slideOut {
-            from { transform: translateX(0); }
-            to { transform: translateX(100%); }
-        }
-
-        .question-detail-page.closing {
-            animation: slideOut 0.3s ease;
-        }
-
-        /* Animation for PDF loader */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .pdf-loader {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            color: var(--gray);
-            animation: fadeIn 0.5s ease;
-        }
-
-        .pdf-loader i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            opacity: 0.7;
-        }
-
-        .pdf-loader p {
-            font-size: 1.1rem;
-            text-align: center;
-            max-width: 300px;
-        }
-
-        /* Navigation for PDF */
-        .pdf-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 15px;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .pdf-nav-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid #e2e8f0;
-            background: white;
-            color: var(--dark);
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pdf-nav-btn:hover:not(:disabled) {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .pdf-nav-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .page-counter {
-            font-weight: 600;
-            color: var(--dark);
-            min-width: 80px;
-            text-align: center;
+        @media (max-width: 480px) {
+            .topics-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <img src="https://via.placeholder.com/50x50/4361ee/ffffff?text=ILS" alt="לוגו מרכז למידה חווייתי">
-                    </div>
+                    <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="logo-text">
                         <h1>מרכז למידה חווייתי</h1>
                         <p>שאלות ופתרונות אינטראקטיביים</p>
                     </div>
                 </div>
-                
                 <nav>
-                    <a href="#" class="active"><i class="fas fa-home"></i> דף הבית</a>
+                    <a href="#" class="active" id="home-nav-btn"><i class="fas fa-home"></i> דף הבית</a>
                     <a href="#" id="booklet-nav-btn"><i class="fas fa-book-open"></i> חוברת לימוד</a>
                 </nav>
-                
-                <div class="user-actions">
-                    <button class="btn btn-primary" id="access-btn">
-                        <i class="fas fa-plus"></i> הוסף שאלה
-                    </button>
-                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
-        <!-- Hero Section -->
         <section class="hero">
             <h2>ברוכים הבאים למרכז הלמידה החווייתי</h2>
-            <p>מקום אחד לכל השאלות והפתרונות שלך. הוסף שאלות, חפש פתרונות, ושתף ידע עם קהילת הלומדים.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" id="quick-start-btn">
-                    <i class="fas fa-bolt"></i> התחל עכשיו
+            <p>בחר קורס ומצא שאלות ופתרונות מפורטים. למד בקצב שלך עם חומרי לימוד מאורגנים לפי תחומים.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="explore-topics-btn">
+                    <i class="fas fa-th-large"></i> עיין בקורסים
                 </button>
-                <a href="#questions" class="btn btn-secondary">
-                    <i class="fas fa-search"></i> חפש שאלות
-                </a>
                 <button class="btn btn-warning" id="open-booklet-btn">
                     <i class="fas fa-book-reader"></i> פתח חוברת לימוד
                 </button>
             </div>
         </section>
 
-        <!-- Statistics -->
         <section class="stats">
             <div class="stat-card">
                 <div class="stat-number" id="total-questions">0</div>
                 <div class="stat-label">שאלות במערכת</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">1,250</div>
-                <div class="stat-label">לומדים פעילים</div>
+                <div class="stat-number">5</div>
+                <div class="stat-label">קורסים</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">94%</div>
                 <div class="stat-label">אחוזי הצלחה</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">קטגוריות לימוד</div>
+                <div class="stat-number">1,250</div>
+                <div class="stat-label">לומדים פעילים</div>
             </div>
         </section>
 
-        <!-- Bulk Actions Panel -->
-        <div class="bulk-actions" id="bulk-actions" style="display: none;">
-            <div class="bulk-actions-left">
-                <div class="select-all-checkbox">
-                    <input type="checkbox" id="select-all-checkbox">
-                    <label for="select-all-checkbox">בחר הכל</label>
-                </div>
-                <div class="selected-count">
-                    <span id="selected-count">0</span> שאלות נבחרו
-                </div>
-            </div>
-            <div>
-                <button class="btn btn-danger" id="delete-selected-btn">
-                    <i class="fas fa-trash"></i> מחק שאלות נבחרות
-                </button>
+        <!-- Topics View -->
+        <div id="topics-view">
+            <div class="topics-section">
+                <h2><i class="fas fa-layer-group"></i> בחר קורס</h2>
+                <div class="topics-grid" id="topics-grid"></div>
             </div>
         </div>
 
-        <!-- Questions Section -->
-        <section id="questions">
-            <div class="section-header">
-                <h2>שאלות ופתרונות</h2>
-                <div class="filters">
-                    <select class="filter-select" id="category-filter">
-                        <option value="all">כל הקטגוריות</option>
-                        <option value="math">מתמטיקה</option>
-                        <option value="physics">פיזיקה</option>
-                        <option value="chemistry">כימיה</option>
-                        <option value="biology">ביולוגיה</option>
-                        <option value="programming">תכנות</option>
-                        <option value="history">היסטוריה</option>
-                    </select>
-                    <select class="filter-select" id="difficulty-filter">
-                        <option value="all">כל הרמות</option>
-                        <option value="easy">קל</option>
-                        <option value="medium">בינוני</option>
-                        <option value="hard">קשה</option>
-                    </select>
-                    <button class="btn btn-secondary" id="reset-filters-btn">
-                        <i class="fas fa-filter-circle-xmark"></i> נקה סינונים
-                    </button>
-                </div>
+        <!-- Questions View -->
+        <div id="questions-view" style="display: none;">
+            <div class="breadcrumb">
+                <a href="#" id="back-to-topics-link"><i class="fas fa-home"></i> כל הקורסים</a>
+                <i class="fas fa-chevron-left"></i>
+                <span id="current-topic-name"></span>
             </div>
 
-            <div class="questions-grid" id="questions-container">
-                <!-- Questions will be loaded here -->
-            </div>
-        </section>
-
-        <!-- כפתור גישה להוספת שאלה -->
-        <div class="access-panel" id="access-panel">
-            <h3><i class="fas fa-lock"></i> הוספת שאלה חדשה</h3>
-            <p>לצורך הוספת שאלה חדשה, נדרש קוד גישה מיוחד.</p>
-            <button class="access-btn" id="access-code-btn">
-                <i class="fas fa-key"></i> הוסף שאלה חדשה (נדרש קוד)
-            </button>
-        </div>
-        
-        <!-- פאנל הוספת שאלה -->
-        <div class="add-question-panel" id="add-question-panel">
-            <div class="panel-header">
-                <h3><i class="fas fa-plus-circle"></i> הוספת שאלה חדשה</h3>
-                <button class="close-panel" id="close-panel-btn">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <form id="question-form">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="question-title">כותרת השאלה</label>
-                        <input type="text" id="question-title" placeholder="לדוגמה: פתרון משוואה ריבועית" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="question-category">קטגוריה</label>
-                        <select id="question-category" required>
-                            <option value="math">מתמטיקה</option>
-                            <option value="physics">פיזיקה</option>
-                            <option value="chemistry">כימיה</option>
-                            <option value="biology">ביולוגיה</option>
-                            <option value="programming">תכנות</option>
-                            <option value="history">היסטוריה</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="question-difficulty">רמת קושי</label>
-                        <select id="question-difficulty" required>
+            <section id="questions">
+                <div class="section-header">
+                    <h2 id="questions-section-title">שאלות ופתרונות</h2>
+                    <div class="filters">
+                        <select class="filter-select" id="difficulty-filter">
+                            <option value="all">כל הרמות</option>
                             <option value="easy">קל</option>
-                            <option value="medium" selected>בינוני</option>
+                            <option value="medium">בינוני</option>
                             <option value="hard">קשה</option>
                         </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="question-description">תיאור השאלה</label>
-                        <textarea id="question-description" placeholder="תאר את השאלה בצורה ברורה ומפורטת..." required></textarea>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label>תמונת שאלה (אופציונלי):</label>
-                        <div class="file-upload-container">
-                            <div class="file-upload" id="question-upload-area">
-                                <input type="file" id="question-image-input" accept="image/*">
-                                <div class="file-upload-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <div class="file-upload-text">
-                                    לחץ כדי לבחור תמונת שאלה מהמחשב
-                                </div>
-                            </div>
-                            <div class="image-preview">
-                                <img id="question-image-preview" src="" alt="תצוגה מקדימה של שאלה" style="display: none;">
-                                <div id="question-image-placeholder" style="color: #999; text-align: center;">
-                                    עדיין לא נבחרה תמונה
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="solution-text">פתרון מפורט</label>
-                        <textarea id="solution-text" placeholder="הוסף הסבר מפורט לפתרון, כולל כל השלבים..." required>פתרון מפורט: השתמשנו בשיטה המתאימה לפתרון השאלה, עם כל השלבים והחישובים הנדרשים.</textarea>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label>תמונת פתרון (אופציונלי):</label>
-                        <div class="file-upload-container">
-                            <div class="file-upload" id="solution-upload-area">
-                                <input type="file" id="solution-image-input" accept="image/*">
-                                <div class="file-upload-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <div class="file-upload-text">
-                                    לחץ כדי לבחור תמונת פתרון מהמחשב
-                                </div>
-                            </div>
-                            <div class="image-preview">
-                                <img id="solution-image-preview" src="" alt="תצוגה מקדימה של פתרון" style="display: none;">
-                                <div id="solution-image-placeholder" style="color: #999; text-align: center;">
-                                    עדיין לא נבחרה תמונה
-                                </div>
-                            </div>
-                        </div>
+                        <button class="btn btn-secondary" id="reset-filters-btn">
+                            <i class="fas fa-filter-circle-xmark"></i> נקה סינון
+                        </button>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn-add" id="add-question-btn">
-                    <i class="fas fa-plus"></i> הוסף שאלה חדשה
-                </button>
-            </form>
-        </section>
-
-        <!-- כפתור איפוס נתונים -->
-        <div class="reset-container">
-            <button class="reset-btn" id="reset-btn">
-                <i class="fas fa-trash"></i> איפוס כל השאלות
-            </button>
+                <div class="questions-grid" id="questions-container"></div>
+            </section>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>מרכז למידה חווייתי</h3>
-                    <p style="color: #cbd5e1; margin-top: 10px;">פלטפורמה אינטראקטיבית ללמידה ושיתוף ידע. הצטרפו לקהילת הלומדים הגדולה בארץ.</p>
+                    <p style="color: #cbd5e1; margin-top: 10px;">פלטפורמה אינטראקטיבית ללמידה ושיתוף ידע. הצטרפו לקהילת הלומדים.</p>
                 </div>
-                
+                <div class="footer-section">
+                    <h3>הקורסים שלנו</h3>
+                    <ul class="footer-links" id="footer-topics-list"></ul>
+                </div>
                 <div class="footer-section">
                     <h3>קישורים מהירים</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> דף הבית</a></li>
-                        <li><a href="#questions"><i class="fas fa-chevron-left"></i> ספריית שאלות</a></li>
+                        <li><a href="#" id="footer-home-btn"><i class="fas fa-chevron-left"></i> דף הבית</a></li>
                         <li><a href="#" id="footer-booklet-btn"><i class="fas fa-chevron-left"></i> חוברת לימוד</a></li>
-                        <li><a href="#" id="access-footer-btn"><i class="fas fa-chevron-left"></i> הוסף שאלה</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>קטגוריות לימוד</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> מתמטיקה</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> פיזיקה</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> כימיה</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> תכנות</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>צור קשר</h3>
-                    <ul class="footer-links">
-                        <li><a href="mailto:contact@learn-center.co.il"><i class="fas fa-envelope"></i> contact@learn-center.co.il</a></li>
-                        <li><a href="tel:+97231234567"><i class="fas fa-phone"></i> 03-1234567</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> תל אביב, רוטשילד 32</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>© 2023 מרכז למידה חווייתי. כל הזכויות שמורות.</p>
+                <p>© 2024 מרכז למידה חווייתי. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Access Code Modal -->
-    <div class="modal-overlay" id="code-modal">
-        <div class="modal-content">
-            <h3><i class="fas fa-lock"></i> הזנת קוד גישה</h3>
-            <p>אנא הזן את קוד הגישה על מנת להוסיף שאלה חדשה למערכת.</p>
-            
-            <input type="password" class="code-input" id="code-input" placeholder="הזן קוד 4 ספרות" maxlength="4" inputmode="numeric">
-            
-            <div class="error-message" id="code-error">
-                <i class="fas fa-exclamation-circle"></i> הקוד שהוזן אינו תקין. אנא נסה שוב.
-            </div>
-            
-            <div class="modal-actions">
-                <button class="btn btn-primary" id="confirm-code-btn">
-                    <i class="fas fa-check"></i> אשר קוד
-                </button>
-                <button class="btn btn-secondary" id="cancel-code-btn">
-                    <i class="fas fa-times"></i> ביטול
-                </button>
-            </div>
-            
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">
-                הערה: הקוד הדרוש הוא 2360
-            </p>
-        </div>
-    </div>
-
-    <!-- Delete Password Modal -->
-    <div class="modal-overlay delete-modal" id="delete-modal" style="display: none;">
-        <div class="modal-content">
-            <h3><i class="fas fa-shield-alt"></i> אימות מחיקת שאלות</h3>
-            <p>לצורך מחיקת שאלות נבחרות, נדרש קוד אבטחה.</p>
-            <p style="font-size: 0.9rem; color: var(--gray);">הינך עומד למחוק <span id="delete-count">0</span> שאלות נבחרות.</p>
-            
-            <input type="password" class="code-input" id="delete-password-input" placeholder="הזן קוד אבטחה" maxlength="6">
-            
-            <div class="error-message" id="delete-error">
-                <i class="fas fa-exclamation-circle"></i> הקוד שהוזן אינו תקין. אנא נסה שוב.
-            </div>
-            
-            <div class="modal-actions">
-                <button class="btn btn-danger" id="confirm-delete-btn">
-                    <i class="fas fa-trash"></i> אשר מחיקה
-                </button>
-                <button class="btn btn-secondary" id="cancel-delete-btn">
-                    <i class="fas fa-times"></i> ביטול
-                </button>
-            </div>
-            
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">
-                הערה: הקוד הדרוש למחיקת שאלות הוא 123456
-            </p>
-        </div>
-    </div>
 
     <!-- Question Detail Page -->
     <div class="question-detail-page" id="question-detail-page">
         <div class="question-detail-header">
             <h2><i class="fas fa-question-circle"></i> פרטי שאלה</h2>
-            <button class="close-detail" id="close-detail-btn">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="close-detail" id="close-detail-btn"><i class="fas fa-times"></i></button>
         </div>
-        
-        <div class="question-detail-content" id="question-detail-content">
-            <!-- Question details will be loaded here -->
-        </div>
+        <div class="question-detail-content" id="question-detail-content"></div>
     </div>
 
     <!-- PDF Booklet Sidebar -->
     <div class="booklet-overlay" id="booklet-overlay"></div>
-    
     <div class="booklet-sidebar" id="booklet-sidebar">
         <div class="booklet-header">
             <h3><i class="fas fa-book"></i> חוברת הלימודים</h3>
-            <button class="close-booklet" id="close-booklet-btn">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="close-booklet" id="close-booklet-btn"><i class="fas fa-times"></i></button>
         </div>
-        
         <div class="booklet-actions">
-            <button class="booklet-btn download" id="download-booklet-btn">
-                <i class="fas fa-download"></i> הורדה
-            </button>
-            <button class="booklet-btn print" id="print-booklet-btn">
-                <i class="fas fa-print"></i> הדפסה
-            </button>
-            <button class="booklet-btn fullscreen" id="fullscreen-booklet-btn">
-                <i class="fas fa-expand"></i> מסך מלא
-            </button>
+            <button class="booklet-btn download" id="download-booklet-btn"><i class="fas fa-download"></i> הורדה</button>
+            <button class="booklet-btn print" id="print-booklet-btn"><i class="fas fa-print"></i> הדפסה</button>
+            <button class="booklet-btn fullscreen" id="fullscreen-booklet-btn"><i class="fas fa-expand"></i> מסך מלא</button>
         </div>
-        
-        <div class="pdf-nav" id="pdf-nav">
-            <button class="pdf-nav-btn" id="pdf-first-btn" disabled>
-                <i class="fas fa-fast-backward"></i>
-            </button>
-            <button class="pdf-nav-btn" id="pdf-prev-btn" disabled>
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="page-counter" id="page-counter">עמוד: <span id="current-page">1</span>/<span id="total-pages">?</span></div>
-            <button class="pdf-nav-btn" id="pdf-next-btn" disabled>
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="pdf-nav-btn" id="pdf-last-btn" disabled>
-                <i class="fas fa-fast-forward"></i>
-            </button>
+        <div class="pdf-nav">
+            <button class="pdf-nav-btn" id="pdf-first-btn" disabled><i class="fas fa-fast-backward"></i></button>
+            <button class="pdf-nav-btn" id="pdf-prev-btn" disabled><i class="fas fa-chevron-right"></i></button>
+            <div class="page-counter">עמוד: <span id="current-page">1</span>/<span id="total-pages">?</span></div>
+            <button class="pdf-nav-btn" id="pdf-next-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="pdf-nav-btn" id="pdf-last-btn" disabled><i class="fas fa-fast-forward"></i></button>
         </div>
-        
         <div class="booklet-progress">
             <div class="booklet-progress-bar" id="booklet-progress-bar"></div>
         </div>
-        
         <div class="booklet-container">
             <div class="pdf-loader" id="pdf-loader">
                 <i class="fas fa-spinner fa-spin"></i>
@@ -1835,1515 +582,621 @@
             <iframe class="booklet-viewer" id="booklet-viewer" style="display: none;"></iframe>
         </div>
     </div>
-    
-    <!-- Floating Booklet Toggle Button -->
-    <button class="booklet-toggle-btn" id="booklet-toggle-btn">
-        <i class="fas fa-book"></i>
-    </button>
+
+    <button class="booklet-toggle-btn" id="booklet-toggle-btn"><i class="fas fa-book"></i></button>
 
     <script>
         // =========================
-        // משתנים גלובליים
+        // הגדרת קורסים
         // =========================
-        const CORRECT_CODE = "2360";
-        const DELETE_PASSWORD = "123456"; // סיסמה למחיקת שאלות נבחרות
-        let isAuthenticated = false;
-        let questionsData = [];
-        let selectedQuestionFile = null;
-        let selectedSolutionFile = null;
-        let selectedQuestions = new Set();
-        let db = null;
-        const DB_NAME = 'LearningCenterDB';
-        const DB_VERSION = 2;
-        const STORE_QUESTIONS = 'questions';
-        const STORE_IMAGES = 'images';
-        
-        // משתנים לחוברת PDF
-        let isBookletOpen = false;
-        let currentPdfPage = 1;
-        let totalPdfPages = 1;
-        const BOOKLET_URL = 'booklet.pdf'; // נתיב לקובץ PDF
-
-        // שאלות לדוגמה (ברירת מחדל)
-        const defaultQuestions = [
+        const TOPICS = [
             {
-                id: "1",
-                title: "הוצאות שונות",
-                category: "math",
-                difficulty: "medium",
-                description: "חישוב דטרמיננטה ופתרון מערכת משוואות בעזרת מטריצות.",
-                solution: "פתרון מפורט: חישבנו את הדטרמיננטה על ידי פיתוח לפי עמודה ראשונה, ולאחר מכן השתמשנו בכלל קרמר לפתרון המשוואות.",
-                tags: ["מתמטיקה", "אלגברה", "מטריצות"],
-                questionImage: "הוצאות.png",
-                solutionImage: " פתרון הוצאות .png",
-                createdAt: "2023-10-15"
+                id: 'databases',
+                name: 'קורס בסיסי נתונים',
+                icon: 'fas fa-database',
+                color: '#4361ee',
+                colorLight: 'rgba(67,97,238,0.1)'
             },
             {
-                id: "2",
-                title: "מחשבים ניידים",
-                category: "programming",
-                difficulty: "easy",
-                description: "כתיבת פונקציה להפיכת מחרוזת ובדיקת פלינדרום.",
-                solution: "פתרון: השתמשנו בלולאה כדי להפוך את המחרוזת ולאחר מכן השווינו למחרוזת המקורית כדי לבדוק אם מדובר בפלינדרום.",
-                tags: ["תכנות", "פייתון", "מחרוזות"],
-                questionImage: "מחשבים ניידים.png",
-                solutionImage: "פתרון מחשבים ניידים.png",
-                createdAt: "2023-10-10"
+                id: 'ai',
+                name: 'קורס בינה מלאכותית',
+                icon: 'fas fa-robot',
+                color: '#7c3aed',
+                colorLight: 'rgba(124,58,237,0.1)'
             },
             {
-                id: "3",
-                title: "מכניקה - תנועה במישור משופע",
-                category: "physics",
-                difficulty: "hard",
-                description: "חישוב מהירות גוף במורד מישור משופע עם חיכוך.",
-                solution: "פתרון: השתמשנו בחוקי ניוטון, פירקנו כוחות והשתמשנו במשוואות קינמטיקה כדי למצוא את המהירות הסופית.",
-                tags: ["פיזיקה", "מכניקה", "תנועה"],
-                questionImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                solutionImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                createdAt: "2023-10-05"
+                id: 'canva',
+                name: 'קורס קנבה',
+                icon: 'fas fa-paint-brush',
+                color: '#be185d',
+                colorLight: 'rgba(190,24,93,0.1)'
             },
             {
-                id: "4",
-                title: "תגובות כימיות - סטיכיומטריה",
-                category: "chemistry",
-                difficulty: "medium",
-                description: "חישוב כמויות מגיבים ותוצרים בתגובה כימית מאוזנת.",
-                solution: "פתרון: איזנו את המשוואה הכימית תחילה, לאחר מכן השתמשנו במסה המולארית לחישוב המולים, ולבסוף חישבנו את מסת התוצר הסופי.",
-                tags: ["כימיה", "תגובות", "סטיכיומטריה"],
-                questionImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                solutionImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                createdAt: "2023-10-01"
+                id: 'spreadsheet',
+                name: 'קורס גיליון אלקטרוני',
+                icon: 'fas fa-table',
+                color: '#16a34a',
+                colorLight: 'rgba(22,163,74,0.1)'
+            },
+            {
+                id: 'tech-enrichment',
+                name: 'קורס העשרה מקצועית טכנולוגית',
+                icon: 'fas fa-microchip',
+                color: '#0891b2',
+                colorLight: 'rgba(8,145,178,0.1)'
             }
         ];
 
         // =========================
-        // פונקציות IndexedDB
+        // משתנים גלובליים
         // =========================
+        let allQuestionsData = {};
+        let currentTopicId = null;
+        let db = null;
+        const DB_NAME = 'LearningCenterDB_v4';
+        const DB_VERSION = 1;
+        const STORE_QUESTIONS = 'questions';
+        const STORE_IMAGES = 'images';
 
-        // פתיחת/יצירת מסד הנתונים
+        let isBookletOpen = false;
+        let currentPdfPage = 1;
+        let totalPdfPages = 50;
+        const BOOKLET_URL = 'booklet.pdf';
+
+        // =========================
+        // שאלות לדוגמה לכל קורס
+        // =========================
+        const defaultQuestionsByTopic = {
+            'databases': [
+                {
+                    id: 'db_1', topicId: 'databases',
+                    title: 'מהו מסד נתונים רלציוני?',
+                    difficulty: 'easy',
+                    description: 'הסבר מהו מסד נתונים רלציוני ומה ההבדל בינו לבין מסד נתונים לא-רלציוני.',
+                    solution: 'מסד נתונים רלציוני מאחסן נתונים בטבלאות עם שורות ועמודות, כאשר קיימות קשרים בין הטבלאות באמצעות מפתחות.\n\nדוגמאות: MySQL, PostgreSQL, Oracle.\n\nמסד נתונים לא-רלציוני (NoSQL) מאחסן נתונים בפורמטים גמישים כמו JSON, מסמכים, גרפים. דוגמאות: MongoDB, Redis.',
+                    tags: ['SQL', 'בסיס נתונים', 'רלציוני'],
+                    questionImage: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80',
+                    createdAt: '01/02/2024'
+                },
+                {
+                    id: 'db_2', topicId: 'databases',
+                    title: 'שאילתת SELECT בסיסית',
+                    difficulty: 'easy',
+                    description: 'כתוב שאילתת SQL שמחזירה את שמות כל העובדים ממחלקת "מכירות" ממוינים לפי שם משפחה.',
+                    solution: 'SELECT first_name, last_name\nFROM employees\nWHERE department = \'מכירות\'\nORDER BY last_name ASC;\n\nהסבר:\n- SELECT בוחר את השדות הרצויים\n- FROM מציין את הטבלה\n- WHERE מסנן לפי תנאי\n- ORDER BY ממיין את התוצאות',
+                    tags: ['SQL', 'SELECT', 'שאילתות'],
+                    questionImage: 'https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500&q=80',
+                    createdAt: '05/02/2024'
+                },
+                {
+                    id: 'db_3', topicId: 'databases',
+                    title: 'JOIN בין טבלאות',
+                    difficulty: 'medium',
+                    description: 'הסבר את ההבדל בין INNER JOIN ל-LEFT JOIN ותן דוגמה לכל אחד.',
+                    solution: 'INNER JOIN - מחזיר רק שורות שיש להן התאמה בשתי הטבלאות.\nדוגמה:\nSELECT e.name, d.dept_name\nFROM employees e\nINNER JOIN departments d ON e.dept_id = d.id;\n\nLEFT JOIN - מחזיר את כל השורות מהטבלה השמאלית, ומצרף נתונים מהימנית אם קיימים (NULL אם לא).\nדוגמה:\nSELECT e.name, d.dept_name\nFROM employees e\nLEFT JOIN departments d ON e.dept_id = d.id;',
+                    tags: ['JOIN', 'SQL', 'טבלאות'],
+                    questionImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&q=80',
+                    createdAt: '10/02/2024'
+                }
+            ],
+            'ai': [
+                {
+                    id: 'ai_1', topicId: 'ai',
+                    title: 'מהי בינה מלאכותית?',
+                    difficulty: 'easy',
+                    description: 'הסבר את המושג בינה מלאכותית (AI) ותן דוגמאות לשימושים נפוצים בחיי היומיום.',
+                    solution: 'בינה מלאכותית (AI) היא ענף במדעי המחשב שמפתח מערכות המסוגלות לבצע משימות הדורשות אינטליגנציה אנושית.\n\nדוגמאות:\n- עוזרים קוליים (סירי, אלקסה)\n- המלצות (נטפליקס, ספוטיפיי)\n- זיהוי תמונות\n- תרגום שפות (גוגל טרנסלייט)\n- רכבים אוטונומיים',
+                    tags: ['AI', 'בינה מלאכותית'],
+                    questionImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&q=80',
+                    createdAt: '01/02/2024'
+                },
+                {
+                    id: 'ai_2', topicId: 'ai',
+                    title: 'למידת מכונה - סוגים עיקריים',
+                    difficulty: 'medium',
+                    description: 'תאר את שלושת הסוגים העיקריים של למידת מכונה ותן דוגמה לכל אחד.',
+                    solution: '1. למידה מפוקחת (Supervised Learning)\nהמודל לומד מדוגמאות עם תוויות.\nדוגמה: זיהוי ספאם באימייל.\n\n2. למידה לא מפוקחת (Unsupervised Learning)\nהמודל מגלה דפוסים בנתונים ללא תוויות.\nדוגמה: קיבוץ לקוחות לפי התנהגות קנייה.\n\n3. למידה חיזוקית (Reinforcement Learning)\nהמודל לומד על ידי ניסוי וטעייה עם תגמולים.\nדוגמה: AI שלומד לשחק שחמט.',
+                    tags: ['ML', 'למידת מכונה'],
+                    questionImage: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&q=80',
+                    createdAt: '07/02/2024'
+                },
+                {
+                    id: 'ai_3', topicId: 'ai',
+                    title: 'רשתות נוירונים',
+                    difficulty: 'hard',
+                    description: 'הסבר כיצד עובדת רשת נוירונים מלאכותית. מהם שכבות הקלט, הסתר והפלט?',
+                    solution: 'רשת נוירונים מלאכותית מורכבת משכבות של "נוירונים" מחוברים:\n\nשכבת קלט (Input Layer) - מקבלת את הנתונים הגולמיים.\n\nשכבות סתר (Hidden Layers) - מעבדות את הנתונים ומוצאות דפוסים. ככל שיש יותר שכבות, המודל "עמוק" יותר (Deep Learning).\n\nשכבת פלט (Output Layer) - מפיקה את התוצאה הסופית.\n\nכל חיבור בין נוירונים מקבל משקל (weight) שמתעדכן בתהליך האימון.',
+                    tags: ['רשתות נוירונים', 'Deep Learning'],
+                    questionImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&q=80',
+                    createdAt: '14/02/2024'
+                }
+            ],
+            'canva': [
+                {
+                    id: 'cv_1', topicId: 'canva',
+                    title: 'יצירת עיצוב ראשון בקנבה',
+                    difficulty: 'easy',
+                    description: 'תאר את השלבים ליצירת פוסט לרשת חברתית בקנבה, כולל בחירת תבנית והתאמה אישית.',
+                    solution: 'שלבים ליצירת פוסט בקנבה:\n\n1. היכנס ל-canva.com והתחבר לחשבון\n2. לחץ "צור עיצוב" ובחר "פוסט לאינסטגרם" (1080×1080)\n3. בחר תבנית מהגלריה או התחל מ"ריק"\n4. ערוך טקסט: לחץ פעמיים על הטקסט לעריכה\n5. שנה צבעים: לחץ על אלמנט ← בחר צבע חדש\n6. הוסף תמונות: "העלאות" ← גרור תמונה\n7. לחץ "שתף" ← "הורד" לשמירה',
+                    tags: ['קנבה', 'עיצוב גרפי', 'רשתות חברתיות'],
+                    questionImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=500&q=80',
+                    createdAt: '01/02/2024'
+                },
+                {
+                    id: 'cv_2', topicId: 'canva',
+                    title: 'עיצוב מצגת בקנבה',
+                    difficulty: 'medium',
+                    description: 'כיצד יוצרים מצגת מקצועית בקנבה? ציין 5 טיפים לעיצוב מצגת אפקטיבית.',
+                    solution: 'יצירת מצגת בקנבה:\nבחר "מצגת" בדף הבית ← בחר תבנית.\n\n5 טיפים לעיצוב מצגת אפקטיבית:\n1. עקביות - השתמש ב-2-3 צבעים לכל היותר\n2. פונט קריא - גודל מינימום 24pt לגוף טקסט\n3. חוק 6×6 - מקסימום 6 שורות, 6 מילים בשורה\n4. תמונות איכותיות - השתמש בתמונות חדות ורלוונטיות\n5. מרווח לבן - אל תמלא כל שטח, תן לעיצוב "לנשום"',
+                    tags: ['מצגת', 'קנבה', 'עיצוב'],
+                    questionImage: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80',
+                    createdAt: '08/02/2024'
+                },
+                {
+                    id: 'cv_3', topicId: 'canva',
+                    title: 'עיצוב לוגו בקנבה',
+                    difficulty: 'medium',
+                    description: 'מהם העקרונות לעיצוב לוגו טוב? כיצד מייצאים לוגו בפורמט PNG שקוף מקנבה?',
+                    solution: 'עקרונות ללוגו טוב:\n1. פשטות - ניתן לזהות גם בגודל קטן\n2. ייחודיות - שונה ממתחרים\n3. גמישות - נראה טוב בשחור-לבן ובצבע\n4. רלוונטיות - מתאים לתחום העסק\n\nייצוא PNG שקוף מקנבה:\n1. עצב את הלוגו ללא רקע\n2. לחץ "שתף" (פינה ימנית עליונה)\n3. בחר "הורד"\n4. סוג קובץ: PNG\n5. סמן ✓ "רקע שקוף"\n6. לחץ "הורד"',
+                    tags: ['לוגו', 'קנבה', 'PNG'],
+                    questionImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=500&q=80',
+                    createdAt: '15/02/2024'
+                }
+            ],
+            'spreadsheet': [
+                {
+                    id: 'sp_1', topicId: 'spreadsheet',
+                    title: 'פונקציית VLOOKUP',
+                    difficulty: 'medium',
+                    description: 'הסבר כיצד משתמשים בפונקציית VLOOKUP בגיליון אלקטרוני. כתוב דוגמה לחיפוש שם עובד לפי מספר ת"ז.',
+                    solution: 'VLOOKUP מחפשת ערך בעמודה הראשונה של טבלה ומחזירה ערך מעמודה אחרת.\n\nתחביר:\n=VLOOKUP(ערך_לחיפוש, טווח_טבלה, מספר_עמודה, [התאמה])\n\nדוגמה:\n=VLOOKUP(A2, $D$2:$F$100, 2, FALSE)\n\nמחפשת את הת"ז שבA2, בטבלה D2:F100, ומחזירה עמודה 2 (שם). FALSE = התאמה מדויקת.',
+                    tags: ['VLOOKUP', 'Excel', 'פונקציות'],
+                    questionImage: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80',
+                    createdAt: '03/02/2024'
+                },
+                {
+                    id: 'sp_2', topicId: 'spreadsheet',
+                    title: 'טבלאות ציר (Pivot Table)',
+                    difficulty: 'hard',
+                    description: 'מהי טבלת ציר? תאר שלב-אחר-שלב כיצד יוצרים טבלת ציר לסיכום נתוני מכירות.',
+                    solution: 'טבלת ציר היא כלי לסיכום וניתוח כמויות גדולות של נתונים.\n\nשלבי יצירה:\n1. בחר את טווח הנתונים כולל כותרות עמודות\n2. לשונית "הוספה" ← "טבלת ציר"\n3. בחר מיקום: גיליון חדש או קיים\n4. בחלונית "שדות טבלת ציר":\n   - גרור "אזור" ← שורות\n   - גרור "חודש" ← עמודות\n   - גרור "מכירות" ← ערכים (סכום)\n5. עצב ← בחר עיצוב מהרצועה',
+                    tags: ['Pivot', 'Excel', 'ניתוח נתונים'],
+                    questionImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80',
+                    createdAt: '10/02/2024'
+                },
+                {
+                    id: 'sp_3', topicId: 'spreadsheet',
+                    title: 'פונקציית IF מקוננת',
+                    difficulty: 'easy',
+                    description: 'כתוב נוסחה שמחזירה: "מצוין" אם ציון מעל 90, "טוב" אם מעל 70, אחרת "דרוש שיפור".',
+                    solution: 'הנוסחה:\n=IF(A1>90,"מצוין",IF(A1>70,"טוב","דרוש שיפור"))\n\nהסבר:\n- IF ראשון בודק: האם A1 > 90?\n  אם כן → "מצוין"\n  אם לא → ממשיך ל-IF הפנימי\n- IF שני בודק: האם A1 > 70?\n  אם כן → "טוב"\n  אם לא → "דרוש שיפור"',
+                    tags: ['IF', 'Excel', 'נוסחאות'],
+                    questionImage: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80',
+                    createdAt: '17/02/2024'
+                }
+            ],
+            'tech-enrichment': [
+                {
+                    id: 'te_1', topicId: 'tech-enrichment',
+                    title: 'מהו Cloud Computing?',
+                    difficulty: 'easy',
+                    description: 'הסבר מהו מחשוב ענן (Cloud Computing) ותן דוגמאות לשירותי ענן מוכרים.',
+                    solution: 'מחשוב ענן הוא אספקת שירותי מחשוב (שרתים, אחסון, בסיסי נתונים, רשתות) דרך האינטרנט ("הענן").\n\nיתרונות:\n- גמישות - שלם רק על מה שאתה משתמש\n- נגישות מכל מקום\n- אין צורך בתחזוקת חומרה\n\nדוגמאות מוכרות:\n- Google Drive / Google Photos\n- iCloud (אפל)\n- Dropbox\n- Microsoft OneDrive\n- Amazon Web Services (AWS)',
+                    tags: ['ענן', 'Cloud', 'טכנולוגיה'],
+                    questionImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80',
+                    createdAt: '01/02/2024'
+                },
+                {
+                    id: 'te_2', topicId: 'tech-enrichment',
+                    title: 'אבטחת סייבר - סיסמאות חזקות',
+                    difficulty: 'easy',
+                    description: 'מהם העקרונות ליצירת סיסמה חזקה? ומהי אימות דו-שלבי (2FA)?',
+                    solution: 'עקרונות לסיסמה חזקה:\n1. אורך מינימום 12 תווים\n2. שילוב: אותיות גדולות + קטנות + מספרים + סמלים\n3. לא מילה מהמילון\n4. סיסמה שונה לכל שירות\n5. שימוש במנהל סיסמאות (LastPass, 1Password)\n\nאימות דו-שלבי (2FA):\nשלב נוסף מעבר לסיסמה - קוד SMS, אפליקציית Authenticator, או מפתח פיזי. גם אם גנבו את הסיסמה, לא יוכלו להיכנס ללא הגורם השני.',
+                    tags: ['סייבר', 'אבטחה', 'סיסמאות'],
+                    questionImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80',
+                    createdAt: '08/02/2024'
+                },
+                {
+                    id: 'te_3', topicId: 'tech-enrichment',
+                    title: 'מהו IoT - האינטרנט של הדברים?',
+                    difficulty: 'medium',
+                    description: 'הסבר מהו IoT ותאר 4 דוגמאות לשימוש בסביבה מקצועית.',
+                    solution: 'IoT (Internet of Things) - רשת של מכשירים פיזיים המחוברים לאינטרנט, שיכולים לאסוף ולשתף נתונים אוטומטית.\n\nדוגמאות בסביבה מקצועית:\n1. מפעלים חכמים - חיישנים על מכונות מזהים תקלות מראש\n2. מחסנים - מעקב אוטומטי אחר מלאי בזמן אמת\n3. משרדים חכמים - בקרת תאורה ומיזוג לפי נוכחות\n4. לוגיסטיקה - מעקב GPS על משאיות ומשלוחים',
+                    tags: ['IoT', 'טכנולוגיה', 'חכם'],
+                    questionImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',
+                    solutionImage: 'https://images.unsplash.com/photo-1519558260268-cde7e03a0152?w=500&q=80',
+                    createdAt: '15/02/2024'
+                }
+            ]
+        };
+
+        // =========================
+        // IndexedDB
+        // =========================
         function openDatabase() {
             return new Promise((resolve, reject) => {
-                const request = indexedDB.open(DB_NAME, DB_VERSION);
-                
-                request.onerror = () => {
-                    console.error("✘ שגיאה בפתיחת מסד הנתונים");
-                    reject(request.error);
-                };
-                
-                request.onsuccess = () => {
-                    db = request.result;
-                    console.log("✓ מסד הנתונים נפתח בהצלחה");
-                    resolve(db);
-                };
-                
-                request.onupgradeneeded = (event) => {
-                    const db = event.target.result;
-                    console.log("📦 שדרוג מסד נתונים לגרסה:", event.oldVersion, "->", event.newVersion);
-                    
-                    // יצירת מאגר לשאלות אם לא קיים
-                    if (!db.objectStoreNames.contains(STORE_QUESTIONS)) {
-                        const questionStore = db.createObjectStore(STORE_QUESTIONS, { keyPath: 'id' });
-                        questionStore.createIndex('category', 'category', { unique: false });
-                        questionStore.createIndex('difficulty', 'difficulty', { unique: false });
-                        console.log("✓ מאגר שאלות נוצר");
-                    } else {
-                        console.log("✓ מאגר שאלות כבר קיים");
+                const req = indexedDB.open(DB_NAME, DB_VERSION);
+                req.onerror = () => reject(req.error);
+                req.onsuccess = () => { db = req.result; resolve(db); };
+                req.onupgradeneeded = (e) => {
+                    const d = e.target.result;
+                    if (!d.objectStoreNames.contains(STORE_QUESTIONS)) {
+                        const qs = d.createObjectStore(STORE_QUESTIONS, { keyPath: 'id' });
+                        qs.createIndex('topicId', 'topicId', { unique: false });
                     }
-                    
-                    // יצירת מאגר לתמונות אם לא קיים
-                    if (!db.objectStoreNames.contains(STORE_IMAGES)) {
-                        const imageStore = db.createObjectStore(STORE_IMAGES, { keyPath: 'id' });
-                        console.log("✓ מאגר תמונות נוצר");
-                    } else {
-                        console.log("✓ מאגר תמונות כבר קיים");
+                    if (!d.objectStoreNames.contains(STORE_IMAGES)) {
+                        d.createObjectStore(STORE_IMAGES, { keyPath: 'id' });
                     }
                 };
             });
         }
 
-        // שמירת שאלה ב-IndexedDB
-        async function saveQuestion(question) {
+        function saveQuestion(q) {
             return new Promise((resolve, reject) => {
-                if (!db) {
-                    console.error("✘ מסד הנתונים לא זמין");
-                    reject(new Error("מסד הנתונים לא זמין"));
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_QUESTIONS], 'readwrite');
-                    const store = transaction.objectStore(STORE_QUESTIONS);
-                    
-                    // יצירת אובייקט שאלה נקי
-                    const questionToSave = {
-                        id: question.id,
-                        title: question.title,
-                        category: question.category,
-                        difficulty: question.difficulty,
-                        description: question.description,
-                        solution: question.solution,
-                        questionImage: question.questionImage || getDefaultImageByCategory(question.category, 'question'),
-                        solutionImage: question.solutionImage || getDefaultImageByCategory(question.category, 'solution'),
-                        createdAt: question.createdAt || new Date().toLocaleDateString('he-IL'),
-                        tags: question.tags || [getCategoryName(question.category), getDifficultyText(question.difficulty)]
-                    };
-                    
-                    const request = store.put(questionToSave);
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה בשמירת שאלה:", event.target.error);
-                        reject(event.target.error);
-                    };
-                    
-                    request.onsuccess = () => {
-                        console.log("✓ שאלה נשמרה בהצלחה:", questionToSave.id);
-                        resolve(questionToSave.id);
-                    };
-                    
-                    transaction.onerror = (event) => {
-                        console.error("✘ שגיאה בטרנזקציה:", event.target.error);
-                        reject(event.target.error);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה בשמירת שאלה:", error);
-                    reject(error);
-                }
+                if (!db) { reject(new Error("DB not available")); return; }
+                const tx = db.transaction([STORE_QUESTIONS], 'readwrite');
+                const r = tx.objectStore(STORE_QUESTIONS).put(q);
+                r.onsuccess = () => resolve(r.result);
+                r.onerror = () => reject(r.error);
             });
         }
 
-        // שמירת תמונה ב-IndexedDB
-        async function saveImage(imageId, imageData) {
+        function loadAllQuestions() {
             return new Promise((resolve, reject) => {
-                if (!db) {
-                    console.error("✘ מסד הנתונים לא זמין");
-                    reject(new Error("מסד הנתונים לא זמין"));
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_IMAGES], 'readwrite');
-                    const store = transaction.objectStore(STORE_IMAGES);
-                    
-                    // בדיקה אם התמונה לא גדולה מדי
-                    if (imageData.length > 5 * 1024 * 1024) {
-                        console.warn("⚠ תמונה גדולה מדי, משתמש בתמונת ברירת מחדל");
-                        resolve(null);
-                        return;
-                    }
-                    
-                    const imageObject = {
-                        id: imageId,
-                        data: imageData,
-                        timestamp: Date.now()
-                    };
-                    
-                    const request = store.put(imageObject);
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה בשמירת תמונה:", event.target.error);
-                        reject(event.target.error);
-                    };
-                    
-                    request.onsuccess = () => {
-                        console.log("✓ תמונה נשמרה בהצלחה:", imageId);
-                        resolve(imageId);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה בשמירת תמונה:", error);
-                    reject(error);
-                }
-            });
-        }
-
-        // טעינת כל השאלות מ-IndexedDB
-        async function loadAllQuestions() {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    console.error("✘ מסד הנתונים לא זמין");
-                    reject(new Error("מסד הנתונים לא זמין"));
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_QUESTIONS], 'readonly');
-                    const store = transaction.objectStore(STORE_QUESTIONS);
-                    const request = store.getAll();
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה בטעינת שאלות:", event.target.error);
-                        reject(event.target.error);
-                    };
-                    
-                    request.onsuccess = () => {
-                        const questions = request.result || [];
-                        console.log("✓ שאלות נטענו:", questions.length, "שאלות");
-                        resolve(questions);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה בטעינת שאלות:", error);
-                    reject(error);
-                }
-            });
-        }
-
-        // טעינת תמונה מ-IndexedDB
-        async function loadImage(imageId) {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    console.error("✘ מסד הנתונים לא זמין");
-                    resolve(null);
-                    return;
-                }
-                
-                if (!imageId || !imageId.startsWith('question_') && !imageId.startsWith('solution_')) {
-                    resolve(null);
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_IMAGES], 'readonly');
-                    const store = transaction.objectStore(STORE_IMAGES);
-                    const request = store.get(imageId);
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה בטעינת תמונה:", event.target.error);
-                        resolve(null);
-                    };
-                    
-                    request.onsuccess = () => {
-                        if (request.result && request.result.data) {
-                            resolve(request.result.data);
-                        } else {
-                            resolve(null);
-                        }
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בטעינת תמונה:", error);
-                    resolve(null);
-                }
-            });
-        }
-
-        // מחיקת שאלה מ-IndexedDB
-        async function deleteQuestionFromDB(questionId) {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    reject(new Error("מסד הנתונים לא זמין"));
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_QUESTIONS], 'readwrite');
-                    const store = transaction.objectStore(STORE_QUESTIONS);
-                    const request = store.delete(questionId);
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה במחיקת שאלה:", event.target.error);
-                        reject(event.target.error);
-                    };
-                    
-                    request.onsuccess = () => {
-                        console.log("✓ שאלה נמחקה:", questionId);
-                        resolve(true);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה במחיקת שאלה:", error);
-                    reject(error);
-                }
-            });
-        }
-
-        // מחיקת תמונה מ-IndexedDB
-        async function deleteImageFromDB(imageId) {
-            return new Promise((resolve, reject) => {
-                if (!db || !imageId) {
-                    resolve(true);
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_IMAGES], 'readwrite');
-                    const store = transaction.objectStore(STORE_IMAGES);
-                    const request = store.delete(imageId);
-                    
-                    request.onerror = (event) => {
-                        console.error("✘ שגיאה במחיקת תמונה:", event.target.error);
-                        reject(event.target.error);
-                    };
-                    
-                    request.onsuccess = () => {
-                        console.log("✓ תמונה נמחקה:", imageId);
-                        resolve(true);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה במחיקת תמונה:", error);
-                    reject(error);
-                }
-            });
-        }
-
-        // מחיקת כל הנתונים מ-IndexedDB
-        async function clearAllDataFromDB() {
-            return new Promise((resolve, reject) => {
-                if (!db) {
-                    reject(new Error("מסד הנתונים לא זמין"));
-                    return;
-                }
-                
-                try {
-                    const transaction = db.transaction([STORE_QUESTIONS, STORE_IMAGES], 'readwrite');
-                    
-                    // מחיקת כל השאלות
-                    const questionStore = transaction.objectStore(STORE_QUESTIONS);
-                    questionStore.clear();
-                    
-                    // מחיקת כל התמונות
-                    const imageStore = transaction.objectStore(STORE_IMAGES);
-                    imageStore.clear();
-                    
-                    transaction.oncomplete = () => {
-                        console.log("✓ כל הנתונים נמחקו");
-                        resolve(true);
-                    };
-                    
-                    transaction.onerror = (event) => {
-                        console.error("✘ שגיאה במחיקת נתונים:", event.target.error);
-                        reject(event.target.error);
-                    };
-                } catch (error) {
-                    console.error("✘ שגיאה בלתי צפויה במחיקת נתונים:", error);
-                    reject(error);
-                }
+                if (!db) { reject(new Error("DB not available")); return; }
+                const tx = db.transaction([STORE_QUESTIONS], 'readonly');
+                const r = tx.objectStore(STORE_QUESTIONS).getAll();
+                r.onsuccess = () => resolve(r.result || []);
+                r.onerror = () => reject(r.error);
             });
         }
 
         // =========================
-        // פונקציות לוגיקה
+        // טעינת נתונים
         // =========================
-
-        // טעינת נתונים מ-IndexedDB
-        async function loadQuestions() {
+        async function loadData() {
             try {
-                console.log("🔄 טוען נתונים...");
                 await openDatabase();
-                const loadedQuestions = await loadAllQuestions();
-                
-                if (loadedQuestions && loadedQuestions.length > 0) {
-                    questionsData = loadedQuestions;
-                    console.log("✓ שאלות נטענו ממסד הנתונים:", questionsData.length, "שאלות");
-                    
-                    // טעינת תמונות עבור כל שאלה
-                    for (let question of questionsData) {
-                        if (question.questionImage && question.questionImage.startsWith('question_')) {
-                            try {
-                                const imageData = await loadImage(question.questionImage);
-                                if (imageData) {
-                                    question.questionImageData = imageData;
-                                }
-                            } catch (e) {
-                                console.warn("⚠ לא ניתן לטעון תמונת שאלה:", e);
-                            }
-                        }
-                        
-                        if (question.solutionImage && question.solutionImage.startsWith('solution_')) {
-                            try {
-                                const imageData = await loadImage(question.solutionImage);
-                                if (imageData) {
-                                    question.solutionImageData = imageData;
-                                }
-                            } catch (e) {
-                                console.warn("⚠ לא ניתן לטעון תמונת פתרון:", e);
-                            }
-                        }
+                const loaded = await loadAllQuestions();
+                if (loaded && loaded.length > 0) {
+                    allQuestionsData = {};
+                    for (const q of loaded) {
+                        if (!allQuestionsData[q.topicId]) allQuestionsData[q.topicId] = [];
+                        allQuestionsData[q.topicId].push(q);
                     }
                 } else {
-                    // אם אין נתונים, טוען את השאלות ברירת המחדל
-                    questionsData = [...defaultQuestions];
-                    console.log("✓ טוען שאלות ברירת מחדל:", questionsData.length, "שאלות");
-                    
-                    // שמירת שאלות ברירת המחדל ב-IndexedDB
-                    for (const question of questionsData) {
-                        await saveQuestion(question);
+                    allQuestionsData = {};
+                    for (const [topicId, questions] of Object.entries(defaultQuestionsByTopic)) {
+                        allQuestionsData[topicId] = questions;
+                        for (const q of questions) await saveQuestion(q);
                     }
                 }
             } catch (e) {
-                console.error("✘ שגיאה בטעינת נתונים:", e);
-                questionsData = [...defaultQuestions];
+                allQuestionsData = JSON.parse(JSON.stringify(defaultQuestionsByTopic));
             }
-            
-            renderQuestions();
+            renderTopics();
             updateStats();
+            renderFooterTopics();
         }
 
-        // המרת קובץ ל-DataURL
-        function convertFileToDataURL(file) {
-            return new Promise((resolve, reject) => {
-                if (!file) {
-                    resolve(null);
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
+        // =========================
+        // הצגת קורסים
+        // =========================
+        function renderTopics() {
+            const grid = document.getElementById('topics-grid');
+            grid.innerHTML = '';
+            for (const topic of TOPICS) {
+                const count = (allQuestionsData[topic.id] || []).length;
+                grid.innerHTML += `
+                    <div class="topic-card"
+                         style="--topic-color:${topic.color}; --topic-color-light:${topic.colorLight}"
+                         onclick="selectTopic('${topic.id}')">
+                        <div class="topic-icon"><i class="${topic.icon}"></i></div>
+                        <div class="topic-name">${topic.name}</div>
+                        <div class="topic-count">${count} שאלות</div>
+                    </div>`;
+            }
         }
 
-        // הצגת כל השאלות
-        function renderQuestions() {
+        function renderFooterTopics() {
+            const list = document.getElementById('footer-topics-list');
+            list.innerHTML = TOPICS.map(t =>
+                `<li><a href="#" onclick="selectTopic('${t.id}'); return false;"><i class="fas fa-chevron-left"></i> ${t.name}</a></li>`
+            ).join('');
+        }
+
+        // =========================
+        // ניווט
+        // =========================
+        function selectTopic(topicId) {
+            currentTopicId = topicId;
+            const topic = TOPICS.find(t => t.id === topicId);
+            document.getElementById('topics-view').style.display = 'none';
+            document.getElementById('questions-view').style.display = 'block';
+            document.getElementById('current-topic-name').textContent = topic ? topic.name : topicId;
+            document.getElementById('questions-section-title').textContent = (topic ? topic.name : topicId) + ' - שאלות ופתרונות';
+            document.getElementById('difficulty-filter').value = 'all';
+            renderQuestionsForTopic(topicId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function backToTopics() {
+            currentTopicId = null;
+            document.getElementById('topics-view').style.display = 'block';
+            document.getElementById('questions-view').style.display = 'none';
+            renderTopics();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================
+        // הצגת שאלות
+        // =========================
+        function renderQuestionsForTopic(topicId, difficultyFilter = 'all') {
             const container = document.getElementById('questions-container');
-            if (!container) return;
-            
             container.innerHTML = '';
-            
-            if (questionsData.length === 0) {
+            let questions = allQuestionsData[topicId] || [];
+            if (difficultyFilter !== 'all') questions = questions.filter(q => q.difficulty === difficultyFilter);
+
+            if (questions.length === 0) {
                 container.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                        <i class="fas fa-inbox" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 20px;"></i>
-                        <h3 style="color: var(--gray); margin-bottom: 10px;">אין עדיין שאלות במערכת</h3>
-                        <p style="color: #94a3b8; max-width: 500px; margin: 0 auto;">
-                            הוסף את השאלה הראשונה שלך כדי להתחיל ללמוד!
-                        </p>
-                    </div>
-                `;
-                updateBulkActions();
+                    <div class="empty-state">
+                        <i class="fas fa-inbox" style="font-size:4rem;color:#cbd5e1;margin-bottom:20px;display:block"></i>
+                        <h3 style="color:var(--gray);margin-bottom:10px">אין שאלות בקורס זה</h3>
+                        <p style="color:#94a3b8">לא נמצאו שאלות התואמות את הסינון הנבחר.</p>
+                    </div>`;
                 return;
             }
-            
-            for (const question of questionsData) {
-                const solutionId = 'solution-' + question.id;
-                const isSelected = selectedQuestions.has(question.id);
-                
-                // שימוש בתמונה המקומית אם קיימת, אחרת בקישור החיצוני או בתמונה ברירת מחדל
-                let questionImgSrc = getDefaultImageByCategory(question.category, 'question');
-                if (question.questionImageData) {
-                    questionImgSrc = question.questionImageData;
-                } else if (question.questionImage && !question.questionImage.startsWith('question_')) {
-                    questionImgSrc = question.questionImage;
-                }
-                
-                let solutionImgSrc = getDefaultImageByCategory(question.category, 'solution');
-                if (question.solutionImageData) {
-                    solutionImgSrc = question.solutionImageData;
-                } else if (question.solutionImage && !question.solutionImage.startsWith('solution_')) {
-                    solutionImgSrc = question.solutionImage;
-                }
-                
-                container.innerHTML += createQuestionHTML(question, solutionId, isSelected, questionImgSrc, solutionImgSrc);
-            }
-            
-            updateStats();
+
+            for (const q of questions) container.innerHTML += createQuestionHTML(q);
             attachSolutionEvents();
-            attachCheckboxEvents();
             attachImageClickEvents();
-            updateBulkActions();
         }
 
-        // יצירת HTML לכרטיס שאלה
-        function createQuestionHTML(question, solutionId, isSelected, questionImgSrc, solutionImgSrc) {
+        function createQuestionHTML(question) {
+            const solutionId = 'solution-' + question.id;
+            const topic = TOPICS.find(t => t.id === question.topicId);
+            const color = topic ? topic.color : 'var(--primary)';
+            const qImg = question.questionImageData || question.questionImage || getDefaultImg(color, 'שאלה');
+            const sImg = question.solutionImageData || question.solutionImage || getDefaultImg('#10b981', 'פתרון');
+
             return `
-                <div class="question-card ${isSelected ? 'selected' : ''}" data-id="${question.id}">
-                    <input type="checkbox" class="question-checkbox" data-id="${question.id}" ${isSelected ? 'checked' : ''}>
-                    
+                <div class="question-card" data-id="${question.id}">
                     <div class="question-header">
-                        <span class="category-badge">${getCategoryName(question.category)}</span>
-                        <span class="difficulty-badge difficulty-${question.difficulty}">
-                            ${getDifficultyText(question.difficulty)}
-                        </span>
+                        <span class="category-badge" style="background:${color}22;color:${color}">${topic ? topic.name : ''}</span>
+                        <span class="difficulty-badge difficulty-${question.difficulty}">${getDifficultyText(question.difficulty)}</span>
                     </div>
                     <h3 class="question-title">${question.title}</h3>
                     <p class="question-description">${question.description}</p>
-                    
                     <div class="question-image" data-question-id="${question.id}">
-                        <img src="${questionImgSrc}" alt="תמונת שאלה" onerror="this.onerror=null; this.src='${getDefaultImageByCategory(question.category, 'question')}'">
+                        <img src="${qImg}" alt="תמונת שאלה" onerror="this.src='${getDefaultImg(color, 'שאלה')}'">
                     </div>
-                    
                     <div class="question-actions">
-                        <button class="action-btn" style="background: rgba(67, 97, 238, 0.1); color: var(--primary);" data-solution-id="${solutionId}">
+                        <button class="action-btn" style="background:${color}22;color:${color}" data-solution-id="${solutionId}">
                             <i class="fas fa-eye"></i> הצג פתרון
                         </button>
                     </div>
-                    
                     <div class="solution-panel" id="${solutionId}">
                         <span class="solution-title">פתרון:</span>
                         <div class="question-image">
-                            <img src="${solutionImgSrc}" alt="תמונת פתרון" onerror="this.onerror=null; this.src='${getDefaultImageByCategory(question.category, 'solution')}'">
+                            <img src="${sImg}" alt="תמונת פתרון" onerror="this.src='${getDefaultImg('#10b981', 'פתרון')}'">
                         </div>
-                        <p>${question.solution}</p>
-                        ${question.tags && question.tags.length > 0 ? `
-                            <div style="margin-top: 20px;">
+                        <p style="white-space:pre-line">${question.solution}</p>
+                        ${question.tags && question.tags.length ? `
+                            <div style="margin-top:20px">
                                 <strong>תגיות:</strong>
-                                ${question.tags.map(tag => `<span style="display: inline-block; background: #f1f5f9; padding: 5px 12px; border-radius: 20px; margin-left: 8px; font-size: 0.85rem; color: #64748b;">${tag}</span>`).join('')}
-                            </div>
-                        ` : ''}
+                                ${question.tags.map(t => `<span style="display:inline-block;background:#f1f5f9;padding:5px 12px;border-radius:20px;margin-left:8px;font-size:.85rem;color:#64748b">${t}</span>`).join('')}
+                            </div>` : ''}
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
-        // פתיחת דף פרטי שאלה
+        // =========================
+        // פתרון
+        // =========================
+        function attachSolutionEvents() {
+            document.querySelectorAll('.action-btn[data-solution-id]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const drawer = document.getElementById(this.getAttribute('data-solution-id'));
+                    if (!drawer) return;
+                    const open = drawer.classList.toggle('open');
+                    this.innerHTML = open
+                        ? '<i class="fas fa-times"></i> סגור פתרון'
+                        : '<i class="fas fa-eye"></i> הצג פתרון';
+                });
+            });
+        }
+
+        // =========================
+        // לחיצה על תמונה → פרטים
+        // =========================
+        function attachImageClickEvents() {
+            document.querySelectorAll('.question-image[data-question-id]').forEach(el => {
+                el.addEventListener('click', function () { openQuestionDetail(this.getAttribute('data-question-id')); });
+            });
+        }
+
         function openQuestionDetail(questionId) {
-            const question = questionsData.find(q => q.id === questionId);
+            const allQ = Object.values(allQuestionsData).flat();
+            const question = allQ.find(q => q.id === questionId);
             if (!question) return;
-            
-            // שימוש בתמונה המקומית אם קיימת, אחרת בקישור החיצוני או בתמונה ברירת מחדל
-            let questionImgSrc = getDefaultImageByCategory(question.category, 'question');
-            if (question.questionImageData) {
-                questionImgSrc = question.questionImageData;
-            } else if (question.questionImage && !question.questionImage.startsWith('question_')) {
-                questionImgSrc = question.questionImage;
-            }
-            
-            let solutionImgSrc = getDefaultImageByCategory(question.category, 'solution');
-            if (question.solutionImageData) {
-                solutionImgSrc = question.solutionImageData;
-            } else if (question.solutionImage && !question.solutionImage.startsWith('solution_')) {
-                solutionImgSrc = question.solutionImage;
-            }
-            
-            const detailContent = document.getElementById('question-detail-content');
-            detailContent.innerHTML = `
+            const topic = TOPICS.find(t => t.id === question.topicId);
+            const color = topic ? topic.color : 'var(--primary)';
+            const qImg = question.questionImageData || question.questionImage || getDefaultImg(color, 'שאלה');
+            const sImg = question.solutionImageData || question.solutionImage || getDefaultImg('#10b981', 'פתרון');
+
+            document.getElementById('question-detail-content').innerHTML = `
                 <div class="detail-meta">
-                    <span class="detail-badge category-badge">${getCategoryName(question.category)}</span>
-                    <span class="detail-badge difficulty-badge difficulty-${question.difficulty}">
-                        ${getDifficultyText(question.difficulty)}
-                    </span>
-                    <span class="detail-badge" style="background: #f1f5f9; color: #64748b;">
-                        <i class="far fa-calendar"></i> ${question.createdAt}
-                    </span>
+                    <span class="detail-badge" style="background:${color}22;color:${color}">${topic ? topic.name : ''}</span>
+                    <span class="detail-badge difficulty-badge difficulty-${question.difficulty}">${getDifficultyText(question.difficulty)}</span>
+                    <span class="detail-badge" style="background:#f1f5f9;color:#64748b"><i class="far fa-calendar"></i> ${question.createdAt}</span>
                 </div>
-                
                 <h1 class="detail-title">${question.title}</h1>
-                
-                <div class="detail-description">
-                    ${question.description}
+                <div class="detail-description">${question.description}</div>
+                <div class="detail-image-container">
+                    <h3><i class="fas fa-question-circle"></i> שאלה</h3>
+                    <div class="detail-image"><img src="${qImg}" alt="תמונת שאלה"></div>
                 </div>
-                
-                <div class="detail-images">
-                    <div class="detail-image-container">
-                        <h3><i class="fas fa-question-circle"></i> שאלה</h3>
-                        <div class="detail-image">
-                            <img src="${questionImgSrc}" alt="תמונת שאלה" onerror="this.onerror=null; this.src='${getDefaultImageByCategory(question.category, 'question')}'">
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="detail-solution">
                     <h3><i class="fas fa-lightbulb"></i> פתרון מפורט</h3>
-                    <div class="solution-text">
-                        ${question.solution}
-                    </div>
-                    
+                    <div class="solution-text" style="white-space:pre-line">${question.solution}</div>
                     <div class="detail-image-container">
                         <h3><i class="fas fa-check-circle"></i> תמונת פתרון</h3>
-                        <div class="detail-image">
-                            <img src="${solutionImgSrc}" alt="תמונת פתרון" onerror="this.onerror=null; this.src='${getDefaultImageByCategory(question.category, 'solution')}'">
-                        </div>
+                        <div class="detail-image"><img src="${sImg}" alt="תמונת פתרון"></div>
                     </div>
-                    
-                    ${question.tags && question.tags.length > 0 ? `
-                        <div style="margin-top: 30px;">
-                            <h4 style="color: var(--gray); margin-bottom: 15px;"><i class="fas fa-tags"></i> תגיות:</h4>
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                ${question.tags.map(tag => `<span style="display: inline-block; background: #f1f5f9; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; color: #64748b;">${tag}</span>`).join('')}
+                    ${question.tags && question.tags.length ? `
+                        <div style="margin-top:30px">
+                            <h4 style="color:var(--gray);margin-bottom:15px"><i class="fas fa-tags"></i> תגיות:</h4>
+                            <div style="display:flex;flex-wrap:wrap;gap:10px">
+                                ${question.tags.map(t => `<span style="background:#f1f5f9;padding:8px 16px;border-radius:20px;font-size:.9rem;color:#64748b">${t}</span>`).join('')}
                             </div>
-                        </div>
-                    ` : ''}
-                    
-                    <div style="margin-top: 40px; display: flex; gap: 15px;">
-                        <button class="solution-toggle-btn" onclick="toggleSolutionInDetail()">
-                            <i class="fas fa-eye"></i> הצג/הסתר פתרון
-                        </button>
+                        </div>` : ''}
+                    <div style="margin-top:40px">
                         <button class="btn btn-secondary" onclick="closeQuestionDetail()">
                             <i class="fas fa-arrow-right"></i> חזרה לרשימה
                         </button>
                     </div>
-                </div>
-            `;
-            
-            const detailPage = document.getElementById('question-detail-page');
-            detailPage.style.display = 'block';
+                </div>`;
+
+            const page = document.getElementById('question-detail-page');
+            page.style.animation = 'slideIn 0.3s ease';
+            page.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            
-            // אנימציית כניסה
-            setTimeout(() => {
-                detailPage.style.animation = 'slideIn 0.3s ease';
-            }, 10);
         }
 
-        // סגירת דף פרטי שאלה
         function closeQuestionDetail() {
-            const detailPage = document.getElementById('question-detail-page');
-            detailPage.style.animation = 'slideOut 0.3s ease';
-            
-            setTimeout(() => {
-                detailPage.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 300);
+            const page = document.getElementById('question-detail-page');
+            page.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => { page.style.display = 'none'; document.body.style.overflow = ''; page.style.animation = ''; }, 300);
         }
 
-        // הצגת/הסתרת פתרון בדף הפרטי
-        function toggleSolutionInDetail() {
-            const solutionSection = document.querySelector('.detail-solution');
-            const solutionImages = document.querySelectorAll('.detail-image-container');
-            
-            if (solutionImages[1]) { // תמונת הפתרון
-                if (solutionImages[1].style.display === 'none') {
-                    solutionImages[1].style.display = 'block';
-                } else {
-                    solutionImages[1].style.display = 'none';
-                }
-            }
-        }
-
-        // אירועי לחיצה על תמונות
-        function attachImageClickEvents() {
-            document.querySelectorAll('.question-image[data-question-id]').forEach(imageContainer => {
-                imageContainer.addEventListener('click', function() {
-                    const questionId = this.getAttribute('data-question-id');
-                    openQuestionDetail(questionId);
-                });
-            });
-        }
-
-        // עדכון סטטיסטיקה
+        // =========================
+        // עזר
+        // =========================
         function updateStats() {
-            const totalQuestions = document.getElementById('total-questions');
-            if (totalQuestions) {
-                totalQuestions.textContent = questionsData.length;
-            }
+            document.getElementById('total-questions').textContent =
+                Object.values(allQuestionsData).reduce((s, a) => s + a.length, 0);
         }
 
-        // עדכון פאנל פעולות מרובות
-        function updateBulkActions() {
-            const bulkActionsPanel = document.getElementById('bulk-actions');
-            const selectedCount = document.getElementById('selected-count');
-            
-            if (questionsData.length > 0) {
-                bulkActionsPanel.style.display = 'flex';
-                selectedCount.textContent = selectedQuestions.size;
-            } else {
-                bulkActionsPanel.style.display = 'none';
-            }
+        function getDifficultyText(d) { return { easy: 'קל', medium: 'בינוני', hard: 'קשה' }[d] || ''; }
+
+        function getDefaultImg(color, text) {
+            return `https://via.placeholder.com/500x300/${color.replace('#', '')}/ffffff?text=${encodeURIComponent(text)}`;
         }
 
         // =========================
-        // פונקציות עזר
+        // חוברת
         // =========================
-        function getCategoryName(category) {
-            const names = {
-                'math': 'מתמטיקה',
-                'physics': 'פיזיקה',
-                'chemistry': 'כימיה',
-                'biology': 'ביולוגיה',
-                'programming': 'תכנות',
-                'history': 'היסטוריה'
-            };
-            return names[category] || 'כללי';
-        }
-
-        function getDifficultyText(difficulty) {
-            const texts = {
-                'easy': 'קל',
-                'medium': 'בינוני',
-                'hard': 'קשה'
-            };
-            return texts[difficulty] || 'לא ידוע';
-        }
-
-        function getDefaultImageByCategory(category, type = 'question') {
-            const color = type === 'question' ? '3b82f6' : '10b981';
-            const text = type === 'question' ? 'תמונת+שאלה' : 'תמונת+פתרון';
-            
-            const categoryTexts = {
-                'math': 'מתמטיקה',
-                'physics': 'פיזיקה',
-                'chemistry': 'כימיה',
-                'biology': 'ביולוגיה',
-                'programming': 'תכנות',
-                'history': 'היסטוריה'
-            };
-            
-            const categoryText = categoryTexts[category] || 'כללי';
-            return `https://via.placeholder.com/500x300/${color}/ffffff?text=${encodeURIComponent(categoryText + ' - ' + text)}`;
-        }
-
-        // =========================
-        // פונקציות פתרון
-        // =========================
-        function attachSolutionEvents() {
-            document.querySelectorAll('.action-btn[data-solution-id]').forEach(button => {
-                button.addEventListener('click', function() {
-                    const solutionId = this.getAttribute('data-solution-id');
-                    toggleSolution(solutionId, this);
-                });
-            });
-        }
-
-        function toggleSolution(solutionId, button) {
-            const drawer = document.getElementById(solutionId);
-            if (!drawer) return;
-            
-            const isOpen = drawer.classList.contains('open');
-            
-            if (isOpen) {
-                drawer.classList.remove('open');
-                button.innerHTML = '<i class="fas fa-eye"></i> הצג פתרון';
-            } else {
-                drawer.classList.add('open');
-                button.innerHTML = '<i class="fas fa-times"></i> סגור פתרון';
-            }
-        }
-
-        // =========================
-        // פונקציות מחיקה
-        // =========================
-        async function deleteQuestion(id) {
-            if (!confirm('האם אתה בטוח שברצונך למחוק שאלה זו?')) {
-                return;
-            }
-            
-            try {
-                const question = questionsData.find(q => q.id === id);
-                
-                // מחיקת תמונות מהמסד נתונים אם קיימות
-                if (question && question.questionImage && question.questionImage.startsWith('question_')) {
-                    await deleteImageFromDB(question.questionImage);
-                }
-                
-                if (question && question.solutionImage && question.solutionImage.startsWith('solution_')) {
-                    await deleteImageFromDB(question.solutionImage);
-                }
-                
-                // מחיקת השאלה מהמסד נתונים
-                await deleteQuestionFromDB(id);
-                
-                // עדכון המערך המקומי
-                questionsData = questionsData.filter(question => question.id !== id);
-                selectedQuestions.delete(id);
-                
-                // ריענון התצוגה
-                renderQuestions();
-                showNotification('השאלה נמחקה בהצלחה!', 'success');
-            } catch (e) {
-                console.error('שגיאה במחיקת שאלה:', e);
-                showNotification('שגיאה במחיקת השאלה', 'error');
-            }
-        }
-
-        // פתיחת מודל מחיקת שאלות נבחרות
-        function openDeleteModal() {
-            if (selectedQuestions.size === 0) {
-                showNotification('לא נבחרו שאלות למחיקה', 'warning');
-                return;
-            }
-            
-            document.getElementById('delete-count').textContent = selectedQuestions.size;
-            document.getElementById('delete-password-input').value = '';
-            document.getElementById('delete-error').style.display = 'none';
-            document.getElementById('delete-modal').style.display = 'flex';
-            document.getElementById('delete-password-input').focus();
-        }
-
-        // סגירת מודל מחיקת שאלות
-        function closeDeleteModal() {
-            document.getElementById('delete-modal').style.display = 'none';
-            document.getElementById('delete-password-input').value = '';
-            document.getElementById('delete-error').style.display = 'none';
-        }
-
-        // מחיקת שאלות נבחרות לאחר אימות סיסמה
-        async function deleteSelectedQuestions() {
-            const password = document.getElementById('delete-password-input').value;
-            const errorMessage = document.getElementById('delete-error');
-            
-            if (password !== DELETE_PASSWORD) {
-                errorMessage.style.display = 'block';
-                document.getElementById('delete-password-input').value = '';
-                document.getElementById('delete-password-input').focus();
-                return;
-            }
-            
-            try {
-                for (const id of selectedQuestions) {
-                    const question = questionsData.find(q => q.id === id);
-                    
-                    // מחיקת תמונות מהמסד נתונים אם קיימות
-                    if (question && question.questionImage && question.questionImage.startsWith('question_')) {
-                        await deleteImageFromDB(question.questionImage);
-                    }
-                    
-                    if (question && question.solutionImage && question.solutionImage.startsWith('solution_')) {
-                        await deleteImageFromDB(question.solutionImage);
-                    }
-                    
-                    // מחיקת השאלה מהמסד נתונים
-                    await deleteQuestionFromDB(id);
-                }
-                
-                // עדכון המערך המקומי
-                questionsData = questionsData.filter(question => !selectedQuestions.has(question.id));
-                selectedQuestions.clear();
-                
-                // סגירת המודל
-                closeDeleteModal();
-                
-                // ריענון התצוגה
-                renderQuestions();
-                showNotification('השאלות נמחקו בהצלחה!', 'success');
-            } catch (e) {
-                console.error('שגיאה במחיקת שאלות:', e);
-                showNotification('שגיאה במחיקת השאלות', 'error');
-            }
-        }
-
-        // =========================
-        // פונקציות בחירת שאלות
-        // =========================
-        function attachCheckboxEvents() {
-            document.querySelectorAll('.question-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const id = this.getAttribute('data-id');
-                    if (this.checked) {
-                        selectedQuestions.add(id);
-                    } else {
-                        selectedQuestions.delete(id);
-                    }
-                    
-                    const card = this.closest('.question-card');
-                    if (card) {
-                        if (this.checked) {
-                            card.classList.add('selected');
-                        } else {
-                            card.classList.remove('selected');
-                        }
-                    }
-                    
-                    updateBulkActions();
-                    updateSelectAllCheckbox();
-                });
-            });
-        }
-
-        // בחירת כל השאלות/ביטול בחירה
-        function selectAllQuestions() {
-            const selectAllCheckbox = document.getElementById('select-all-checkbox');
-            
-            if (selectAllCheckbox.checked) {
-                questionsData.forEach(q => selectedQuestions.add(q.id));
-            } else {
-                selectedQuestions.clear();
-            }
-            
-            renderQuestions();
-            updateBulkActions();
-        }
-
-        // עדכון תיבת הסימון "בחר הכל"
-        function updateSelectAllCheckbox() {
-            const selectAllCheckbox = document.getElementById('select-all-checkbox');
-            
-            if (questionsData.length === 0) {
-                selectAllCheckbox.checked = false;
-                selectAllCheckbox.disabled = true;
-                return;
-            }
-            
-            selectAllCheckbox.disabled = false;
-            
-            const allSelected = questionsData.every(q => selectedQuestions.has(q.id));
-            selectAllCheckbox.checked = allSelected;
-        }
-
-        // =========================
-        // פונקציות טופס והוספת שאלה
-        // =========================
-        function openCodeModal() {
-            document.getElementById('code-modal').style.display = 'flex';
-            document.getElementById('code-input').focus();
-            document.getElementById('code-error').style.display = 'none';
-        }
-
-        function closeCodeModal() {
-            document.getElementById('code-modal').style.display = 'none';
-            document.getElementById('code-input').value = '';
-            document.getElementById('code-error').style.display = 'none';
-        }
-
-        function checkCode() {
-            const enteredCode = document.getElementById('code-input').value;
-            const errorMessage = document.getElementById('code-error');
-            
-            if (enteredCode === CORRECT_CODE) {
-                isAuthenticated = true;
-                sessionStorage.setItem('isAuthenticated', 'true');
-                closeCodeModal();
-                
-                document.getElementById('add-question-panel').style.display = 'block';
-                document.getElementById('access-panel').style.display = 'none';
-                
-                setTimeout(() => {
-                    document.getElementById('add-question-panel').scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
-                    });
-                }, 300);
-            } else {
-                errorMessage.style.display = 'block';
-                document.getElementById('code-input').value = '';
-                document.getElementById('code-input').focus();
-            }
-        }
-
-        async function addNewQuestion(e) {
-            e.preventDefault();
-            
-            if (!isAuthenticated) {
-                alert('נדרש קוד גישה כדי להוסיף שאלות חדשות.');
-                openCodeModal();
-                return;
-            }
-            
-            const title = document.getElementById('question-title').value.trim();
-            const category = document.getElementById('question-category').value;
-            const description = document.getElementById('question-description').value.trim();
-            const difficulty = document.getElementById('question-difficulty').value;
-            const solutionText = document.getElementById('solution-text').value.trim();
-            
-            if (!title || !description || !solutionText) {
-                alert('אנא מלא את כל השדות החובה: כותרת, תיאור ופתרון');
-                return;
-            }
-            
-            const newQuestion = {
-                id: Date.now().toString(),
-                title: title,
-                category: category,
-                difficulty: difficulty,
-                description: description,
-                solution: solutionText,
-                createdAt: new Date().toLocaleDateString('he-IL'),
-                tags: [getCategoryName(category), getDifficultyText(difficulty)]
-            };
-            
-            try {
-                console.log("➕ מוסיף שאלה חדשה...");
-                
-                // שמירת התמונות אם קיימות
-                if (selectedQuestionFile) {
-                    console.log("📷 שומר תמונת שאלה...");
-                    const questionImageId = `question_${newQuestion.id}`;
-                    const questionImageData = await convertFileToDataURL(selectedQuestionFile);
-                    await saveImage(questionImageId, questionImageData);
-                    newQuestion.questionImage = questionImageId;
-                    newQuestion.questionImageData = questionImageData;
-                    console.log("✓ תמונת שאלה נשמרה");
-                } else {
-                    newQuestion.questionImage = getDefaultImageByCategory(category, 'question');
-                    console.log("📷 משתמש בתמונת ברירת מחדל לשאלה");
-                }
-                
-                if (selectedSolutionFile) {
-                    console.log("📷 שומר תמונת פתרון...");
-                    const solutionImageId = `solution_${newQuestion.id}`;
-                    const solutionImageData = await convertFileToDataURL(selectedSolutionFile);
-                    await saveImage(solutionImageId, solutionImageData);
-                    newQuestion.solutionImage = solutionImageId;
-                    newQuestion.solutionImageData = solutionImageData;
-                    console.log("✓ תמונת פתרון נשמרה");
-                } else {
-                    newQuestion.solutionImage = getDefaultImageByCategory(category, 'solution');
-                    console.log("📷 משתמש בתמונת ברירת מחדל לפתרון");
-                }
-                
-                // שמירת השאלה במסד הנתונים
-                console.log("💾 שומר שאלה במסד הנתונים...");
-                await saveQuestion(newQuestion);
-                console.log("✓ שאלה נשמרה במסד הנתונים");
-                
-                // הוספת השאלה למערך המקומי
-                questionsData.unshift(newQuestion);
-                
-                // איפוס הטופס
-                document.getElementById('question-title').value = '';
-                document.getElementById('question-description').value = '';
-                document.getElementById('solution-text').value = 'פתרון מפורט: השתמשנו בשיטה המתאימה לפתרון השאלה, עם כל השלבים והחישובים הנדרשים.';
-                document.getElementById('question-image-input').value = '';
-                document.getElementById('solution-image-input').value = '';
-                document.getElementById('question-image-preview').style.display = 'none';
-                document.getElementById('solution-image-preview').style.display = 'none';
-                document.getElementById('question-image-placeholder').style.display = 'block';
-                document.getElementById('solution-image-placeholder').style.display = 'block';
-                
-                selectedQuestionFile = null;
-                selectedSolutionFile = null;
-                
-                // רענון התצוגה
-                renderQuestions();
-                
-                showNotification('השאלה נוספה ונשמרה בהצלחה!', 'success');
-                console.log("✅ שאלה חדשה נוספה בהצלחה!");
-                
-                setTimeout(() => {
-                    const container = document.getElementById('questions-container');
-                    if (container && container.firstChild) {
-                        container.firstChild.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                        });
-                    }
-                }, 100);
-            } catch (error) {
-                console.error('❌ שגיאה בהוספת שאלה:', error);
-                showNotification('שגיאה בשמירת השאלה: ' + error.message, 'error');
-            }
-        }
-
-        async function clearAllData() {
-            if (!confirm('האם אתה בטוח שברצונך למחוק את כל השאלות?\nפעולה זו אינה ניתנת לביטול!')) {
-                return;
-            }
-            
-            try {
-                await clearAllDataFromDB();
-                questionsData = [];
-                selectedQuestions.clear();
-                renderQuestions();
-                showNotification('כל השאלות נמחקו בהצלחה.', 'success');
-            } catch (error) {
-                console.error('שגיאה במחיקת נתונים:', error);
-                showNotification('שגיאה במחיקת הנתונים', 'error');
-            }
-        }
-
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                left: 20px;
-                background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-                color: white;
-                padding: 15px 25px;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                z-index: 3000;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-weight: 500;
-                animation: slideIn 0.3s ease;
-            `;
-            
-            notification.innerHTML = `
-                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-                ${message}
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 3000);
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(-100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(-100%); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        // =========================
-        // פונקציות חוברת PDF
-        // =========================
-
-        // פתיחת/סגירת חלון החוברת
         function toggleBooklet() {
-            const sidebar = document.getElementById('booklet-sidebar');
-            const overlay = document.getElementById('booklet-overlay');
-            const toggleBtn = document.getElementById('booklet-toggle-btn');
-            
-            if (!isBookletOpen) {
-                // פתיחת החוברת
-                sidebar.classList.add('open');
-                overlay.classList.add('active');
-                toggleBtn.classList.add('open');
-                isBookletOpen = true;
-                
-                // טעינת ה-PDF אם לא נטען עדיין
-                loadBookletPDF();
-                
-                // מניעת גלילה באזור הראשי
-                document.body.style.overflow = 'hidden';
-            } else {
-                // סגירת החוברת
-                sidebar.classList.remove('open');
-                overlay.classList.remove('active');
-                toggleBtn.classList.remove('open');
-                isBookletOpen = false;
-                
-                // החזרת הגלילה באזור הראשי
-                document.body.style.overflow = '';
-            }
+            isBookletOpen = !isBookletOpen;
+            document.getElementById('booklet-sidebar').classList.toggle('open', isBookletOpen);
+            document.getElementById('booklet-overlay').classList.toggle('active', isBookletOpen);
+            document.getElementById('booklet-toggle-btn').classList.toggle('open', isBookletOpen);
+            if (isBookletOpen) { loadBookletPDF(); document.body.style.overflow = 'hidden'; }
+            else document.body.style.overflow = '';
         }
 
-        // טעינת קובץ ה-PDF
         function loadBookletPDF() {
             const viewer = document.getElementById('booklet-viewer');
             const loader = document.getElementById('pdf-loader');
-            
-            // הצגת אנימציית טעינה
-            viewer.style.display = 'none';
-            loader.style.display = 'flex';
-            
-            // טעינת קובץ ה-PDF
+            viewer.style.display = 'none'; loader.style.display = 'flex';
             setTimeout(() => {
-                viewer.src = BOOKLET_URL + '#view=FitH&toolbar=0&navpanes=0&scrollbar=0';
-                viewer.style.display = 'block';
-                loader.style.display = 'none';
-                
-                // עדכון מצב כפתורי הניווט
+                viewer.src = BOOKLET_URL + '#view=FitH&toolbar=0&navpanes=0';
+                viewer.style.display = 'block'; loader.style.display = 'none';
                 updatePdfNavigation();
             }, 1000);
         }
 
-        // עדכון כפתורי ניווט PDF
         function updatePdfNavigation() {
-            const currentPageEl = document.getElementById('current-page');
-            const totalPagesEl = document.getElementById('total-pages');
-            const progressBar = document.getElementById('booklet-progress-bar');
-            const prevBtn = document.getElementById('pdf-prev-btn');
-            const nextBtn = document.getElementById('pdf-next-btn');
-            const firstBtn = document.getElementById('pdf-first-btn');
-            const lastBtn = document.getElementById('pdf-last-btn');
-            
-            // עדכון ספירת עמודים (הדמיה)
-            totalPdfPages = 50;
-            
-            currentPageEl.textContent = currentPdfPage;
-            totalPagesEl.textContent = totalPdfPages;
-            
-            // עדכון התקדמות
-            const progress = (currentPdfPage / totalPdfPages) * 100;
-            progressBar.style.width = progress + '%';
-            
-            // עדכון מצב כפתורים
-            firstBtn.disabled = currentPdfPage === 1;
-            prevBtn.disabled = currentPdfPage === 1;
-            nextBtn.disabled = currentPdfPage === totalPdfPages;
-            lastBtn.disabled = currentPdfPage === totalPdfPages;
+            document.getElementById('current-page').textContent = currentPdfPage;
+            document.getElementById('total-pages').textContent = totalPdfPages;
+            document.getElementById('booklet-progress-bar').style.width = (currentPdfPage / totalPdfPages * 100) + '%';
+            document.getElementById('pdf-first-btn').disabled = currentPdfPage === 1;
+            document.getElementById('pdf-prev-btn').disabled = currentPdfPage === 1;
+            document.getElementById('pdf-next-btn').disabled = currentPdfPage === totalPdfPages;
+            document.getElementById('pdf-last-btn').disabled = currentPdfPage === totalPdfPages;
         }
 
-        // הורדת קובץ PDF
-        function downloadBooklet() {
-            const link = document.createElement('a');
-            link.href = BOOKLET_URL;
-            link.download = 'חוברת_לימודים_מרכז_למידה.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showNotification('החוברת החלה להורדה', 'success');
-        }
-
-        // הדפסת קובץ PDF
-        function printBooklet() {
-            const viewer = document.getElementById('booklet-viewer');
-            if (viewer.contentWindow) {
-                viewer.contentWindow.print();
-            } else {
-                const printWindow = window.open(BOOKLET_URL, '_blank');
-                printWindow.onload = function() {
-                    printWindow.print();
-                };
-            }
-        }
-
-        // פתיחת PDF במסך מלא
-        function openBookletFullscreen() {
-            const viewer = document.getElementById('booklet-viewer');
-            
-            if (viewer.requestFullscreen) {
-                viewer.requestFullscreen();
-            } else if (viewer.mozRequestFullScreen) {
-                viewer.mozRequestFullScreen();
-            } else if (viewer.webkitRequestFullscreen) {
-                viewer.webkitRequestFullscreen();
-            } else if (viewer.msRequestFullscreen) {
-                viewer.msRequestFullscreen();
-            }
-            
-            showNotification('החוברת במצב מסך מלא. לחץ ESC לצאת.', 'info');
-        }
-
-        // ניווט בין דפי ה-PDF
-        function navigatePdf(direction) {
-            const viewer = document.getElementById('booklet-viewer');
-            
-            if (direction === 'next' && currentPdfPage < totalPdfPages) {
-                currentPdfPage++;
-            } else if (direction === 'prev' && currentPdfPage > 1) {
-                currentPdfPage--;
-            } else if (direction === 'first') {
-                currentPdfPage = 1;
-            } else if (direction === 'last') {
-                currentPdfPage = totalPdfPages;
-            }
-            
-            // הדמיית טעינה
+        function navigatePdf(dir) {
+            if (dir === 'next' && currentPdfPage < totalPdfPages) currentPdfPage++;
+            else if (dir === 'prev' && currentPdfPage > 1) currentPdfPage--;
+            else if (dir === 'first') currentPdfPage = 1;
+            else if (dir === 'last') currentPdfPage = totalPdfPages;
             const loader = document.getElementById('pdf-loader');
-            const viewerEl = document.getElementById('booklet-viewer');
-            
-            loader.style.display = 'flex';
-            viewerEl.style.display = 'none';
-            
-            setTimeout(() => {
-                updatePdfNavigation();
-                loader.style.display = 'none';
-                viewerEl.style.display = 'block';
-            }, 300);
+            const viewer = document.getElementById('booklet-viewer');
+            loader.style.display = 'flex'; viewer.style.display = 'none';
+            setTimeout(() => { updatePdfNavigation(); loader.style.display = 'none'; viewer.style.display = 'block'; }, 300);
         }
 
         // =========================
-        // אתחול הדף
+        // אתחול
         // =========================
-        document.addEventListener('DOMContentLoaded', async function() {
-            console.log("🚀 מערכת מרכז הלמידה נטענה");
-            
-            // בדיקת אימות קודם
-            const savedAuth = sessionStorage.getItem('isAuthenticated');
-            if (savedAuth === 'true') {
-                isAuthenticated = true;
-                document.getElementById('add-question-panel').style.display = 'block';
-                document.getElementById('access-panel').style.display = 'none';
-            }
-            
-            // טעינת נתונים
-            await loadQuestions();
-            
-            // ========================================
-            // אירועים לדף פרטי שאלה
-            // ========================================
-            
-            // סגירת דף פרטי שאלה
-            document.getElementById('close-detail-btn').addEventListener('click', closeQuestionDetail);
-            
-            // סגירת דף פרטי שאלה עם ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && document.getElementById('question-detail-page').style.display === 'block') {
-                    closeQuestionDetail();
-                }
+        document.addEventListener('DOMContentLoaded', async function () {
+            await loadData();
+
+            // "עיין בקורסים" — תמיד חוזר לדף הנושאים
+            document.getElementById('explore-topics-btn').addEventListener('click', () => {
+                backToTopics();
+                setTimeout(() => document.getElementById('topics-view').scrollIntoView({ behavior: 'smooth' }), 50);
             });
-            
-            // ========================================
-            // אירועים לחוברת PDF
-            // ========================================
-            
-            // כפתור פתיחת חוברת מכפתור צף
+
+            // ניווט
+            document.getElementById('home-nav-btn').addEventListener('click', (e) => { e.preventDefault(); backToTopics(); });
+            document.getElementById('back-to-topics-link').addEventListener('click', (e) => { e.preventDefault(); backToTopics(); });
+            document.getElementById('footer-home-btn').addEventListener('click', (e) => { e.preventDefault(); backToTopics(); });
+
+            // סינון
+            document.getElementById('difficulty-filter').addEventListener('change', function () {
+                if (currentTopicId) renderQuestionsForTopic(currentTopicId, this.value);
+            });
+            document.getElementById('reset-filters-btn').addEventListener('click', () => {
+                document.getElementById('difficulty-filter').value = 'all';
+                if (currentTopicId) renderQuestionsForTopic(currentTopicId, 'all');
+            });
+
+            // חוברת
             document.getElementById('booklet-toggle-btn').addEventListener('click', toggleBooklet);
-            
-            // כפתור פתיחת חוברת מתפריט הניווט
-            document.getElementById('booklet-nav-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                toggleBooklet();
-            });
-            
-            // כפתור פתיחת חוברת מלינק פוטר
-            document.getElementById('footer-booklet-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                toggleBooklet();
-            });
-            
-            // כפתור פתיחת חוברת מכפתור הירו
+            document.getElementById('booklet-nav-btn').addEventListener('click', (e) => { e.preventDefault(); toggleBooklet(); });
+            document.getElementById('footer-booklet-btn').addEventListener('click', (e) => { e.preventDefault(); toggleBooklet(); });
             document.getElementById('open-booklet-btn').addEventListener('click', toggleBooklet);
-            
-            // כפתור סגירת חוברת
             document.getElementById('close-booklet-btn').addEventListener('click', toggleBooklet);
-            
-            // סגירת חוברת בלחיצה מחוץ
             document.getElementById('booklet-overlay').addEventListener('click', toggleBooklet);
-            
-            // כפתורי הפעולות בחוברת
-            document.getElementById('download-booklet-btn').addEventListener('click', downloadBooklet);
-            document.getElementById('print-booklet-btn').addEventListener('click', printBooklet);
-            document.getElementById('fullscreen-booklet-btn').addEventListener('click', openBookletFullscreen);
-            
-            // כפתורי ניווט ב-PDF
+            document.getElementById('download-booklet-btn').addEventListener('click', () => {
+                const l = document.createElement('a'); l.href = BOOKLET_URL; l.download = 'חוברת_לימודים.pdf';
+                document.body.appendChild(l); l.click(); document.body.removeChild(l);
+            });
+            document.getElementById('print-booklet-btn').addEventListener('click', () => {
+                const v = document.getElementById('booklet-viewer');
+                if (v.contentWindow) v.contentWindow.print();
+            });
+            document.getElementById('fullscreen-booklet-btn').addEventListener('click', () => {
+                const v = document.getElementById('booklet-viewer');
+                (v.requestFullscreen || v.webkitRequestFullscreen || v.mozRequestFullScreen || v.msRequestFullscreen).call(v);
+            });
             document.getElementById('pdf-first-btn').addEventListener('click', () => navigatePdf('first'));
             document.getElementById('pdf-prev-btn').addEventListener('click', () => navigatePdf('prev'));
             document.getElementById('pdf-next-btn').addEventListener('click', () => navigatePdf('next'));
             document.getElementById('pdf-last-btn').addEventListener('click', () => navigatePdf('last'));
-            
-            // ========================================
-            // אירועים למחיקת שאלות נבחרות
-            // ========================================
-            
-            // כפתור מחיקת שאלות נבחרות
-            document.getElementById('delete-selected-btn').addEventListener('click', openDeleteModal);
-            
-            // אימות סיסמה למחיקה
-            document.getElementById('confirm-delete-btn').addEventListener('click', deleteSelectedQuestions);
-            
-            // ביטול מחיקה
-            document.getElementById('cancel-delete-btn').addEventListener('click', closeDeleteModal);
-            
-            // הקשה על Enter בשדה סיסמת המחיקה
-            document.getElementById('delete-password-input').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    deleteSelectedQuestions();
-                }
-            });
-            
-            // ========================================
-            // אירועים קיימים
-            // ========================================
-            
-            // אירועי כפתורים קיימים
-            document.getElementById('access-btn').addEventListener('click', openCodeModal);
-            document.getElementById('access-code-btn').addEventListener('click', openCodeModal);
-            document.getElementById('quick-start-btn').addEventListener('click', openCodeModal);
-            document.getElementById('confirm-code-btn').addEventListener('click', checkCode);
-            document.getElementById('cancel-code-btn').addEventListener('click', closeCodeModal);
-            document.getElementById('add-question-btn').addEventListener('click', addNewQuestion);
-            document.getElementById('reset-btn').addEventListener('click', clearAllData);
-            document.getElementById('access-footer-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                openCodeModal();
-            });
-            
-            // אירוע סגירת פאנל
-            document.getElementById('close-panel-btn').addEventListener('click', function() {
-                document.getElementById('add-question-panel').style.display = 'none';
-                document.getElementById('access-panel').style.display = 'block';
-            });
-            
-            // אירוע Enter בקוד
-            document.getElementById('code-input').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    checkCode();
-                }
-            });
-            
-            // אירוע בחירת כל השאלות
-            document.getElementById('select-all-checkbox').addEventListener('change', selectAllQuestions);
-            
-            // אירועי העלאת תמונות
-            document.getElementById('question-image-input').addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert('גודל התמונה גדול מדי. אנא בחר תמונה שגודלה עד 5MB.');
-                        this.value = '';
-                        return;
-                    }
-                    
-                    selectedQuestionFile = file;
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        document.getElementById('question-image-preview').src = e.target.result;
-                        document.getElementById('question-image-preview').style.display = 'block';
-                        document.getElementById('question-image-placeholder').style.display = 'none';
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-            
-            document.getElementById('solution-image-input').addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert('גודל התמונה גדול מדי. אנא בחר תמונה שגודלה עד 5MB.');
-                        this.value = '';
-                        return;
-                    }
-                    
-                    selectedSolutionFile = file;
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        document.getElementById('solution-image-preview').src = e.target.result;
-                        document.getElementById('solution-image-preview').style.display = 'block';
-                        document.getElementById('solution-image-placeholder').style.display = 'none';
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
 
-            // אירועי סינון שאלות
-            document.getElementById('category-filter').addEventListener('change', filterQuestions);
-            document.getElementById('difficulty-filter').addEventListener('change', filterQuestions);
-            document.getElementById('reset-filters-btn').addEventListener('click', function() {
-                document.getElementById('category-filter').value = 'all';
-                document.getElementById('difficulty-filter').value = 'all';
-                renderQuestions();
+            // סגירת פרטים עם ESC
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && document.getElementById('question-detail-page').style.display === 'block')
+                    closeQuestionDetail();
             });
-
-            async function filterQuestions() {
-                const category = document.getElementById('category-filter').value;
-                const difficulty = document.getElementById('difficulty-filter').value;
-                const container = document.getElementById('questions-container');
-                
-                if (!container) return;
-                
-                let filtered = [...questionsData];
-                
-                if (category !== 'all') {
-                    filtered = filtered.filter(q => q.category === category);
-                }
-                
-                if (difficulty !== 'all') {
-                    filtered = filtered.filter(q => q.difficulty === difficulty);
-                }
-                
-                container.innerHTML = '';
-                
-                if (filtered.length === 0) {
-                    container.innerHTML = `
-                        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                            <i class="fas fa-search" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 20px;"></i>
-                            <h3 style="color: var(--gray); margin-bottom: 10px;">לא נמצאו שאלות</h3>
-                            <p style="color: #94a3b8; max-width: 500px; margin: 0 auto;">
-                                נסה לשנות את פרמטרי החיפוש או להוסיף שאלה חדשה.
-                            </p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                for (const question of filtered) {
-                    const isSelected = selectedQuestions.has(question.id);
-                    const solutionId = 'solution-' + question.id;
-                    
-                    // שימוש בתמונה המקומית אם קיימת
-                    let questionImgSrc = getDefaultImageByCategory(question.category, 'question');
-                    if (question.questionImageData) {
-                        questionImgSrc = question.questionImageData;
-                    } else if (question.questionImage && !question.questionImage.startsWith('question_')) {
-                        questionImgSrc = question.questionImage;
-                    }
-                    
-                    let solutionImgSrc = getDefaultImageByCategory(question.category, 'solution');
-                    if (question.solutionImageData) {
-                        solutionImgSrc = question.solutionImageData;
-                    } else if (question.solutionImage && !question.solutionImage.startsWith('solution_')) {
-                        solutionImgSrc = question.solutionImage;
-                    }
-                    
-                    container.innerHTML += createQuestionHTML(question, solutionId, isSelected, questionImgSrc, solutionImgSrc);
-                }
-                
-                attachSolutionEvents();
-                attachCheckboxEvents();
-                attachImageClickEvents();
-            }
+            document.getElementById('close-detail-btn').addEventListener('click', closeQuestionDetail);
         });
     </script>
 </body>
