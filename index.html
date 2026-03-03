@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מרכז למידה חווייתי מאת המרצה:כרמית גפני  | ניהול שאלות ופתרונות</title>
+    <title>מרכז למידה חווייתי מאת המרצה:כרמית גפני | ניהול שאלות ופתרונות</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +33,190 @@
             color: var(--dark);
             line-height: 1.6;
             min-height: 100vh;
+        }
+
+        /* מסך התחברות */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(67, 97, 238, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .login-logo i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .login-container h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .login-container p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            direction: ltr;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .login-error {
+            color: var(--danger);
+            margin-top: 15px;
+            font-size: 0.9rem;
+            min-height: 20px;
+        }
+
+        .login-hint {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .login-hint code {
+            background: #e2e8f0;
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* מניעת העתקה */
+        .no-copy {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: none;
+        }
+
+        .no-copy .question-card,
+        .no-copy .solution-panel,
+        .no-copy .booklet-sidebar,
+        .no-copy .question-detail-page {
+            pointer-events: auto;
+        }
+
+        /* הודעת שגיאת העתקה */
+        .copy-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            z-index: 20000;
+            box-shadow: var(--shadow);
+            animation: slideUp 0.3s ease;
+            display: none;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* מניעת גרירה */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
         }
 
         .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 20px; }
@@ -431,6 +614,31 @@
     </style>
 </head>
 <body>
+    <!-- מסך התחברות -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <div class="login-logo">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h2>ברוך הבא</h2>
+            <p>הזן סיסמה כדי להמשיך</p>
+            <input type="password" class="login-input" id="passwordInput" placeholder="סיסמה" autofocus>
+            <button class="login-btn" id="loginBtn">
+                <i class="fas fa-lock-open"></i> כניסה
+            </button>
+            <div class="login-error" id="loginError"></div>
+            <div class="login-hint">
+                <i class="fas fa-info-circle"></i> רמז: הסיסמה היא התאריך של היום (ddmmyyyy)<br>
+                <code id="hintDate"></code>
+            </div>
+        </div>
+    </div>
+
+    <!-- הודעת העתקה -->
+    <div class="copy-toast" id="copyToast">
+        <i class="fas fa-exclamation-circle"></i> העתקת תוכן חסומה
+    </div>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -538,7 +746,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>©המעתיק יבוא על דינו   לכרמית על בניית האתר ותפעולומרכז למידה חווייתי שנוצר ללומדים בקורסים של כרמית גפני. כל הזכויות שמורות.</p>
+                <p>© המעתיק יבוא על דינו לכרמית על בניית האתר ותפעולו מרכז למידה חווייתי שנוצר ללומדים בקורסים של כרמית גפני. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
@@ -642,6 +850,17 @@
         let currentPdfPage = 1;
         let totalPdfPages = 50;
         const BOOKLET_URL = 'booklet.pdf';
+
+        // סיסמה דינמית - תאריך נוכחי בפורמט ddmmyyyy
+        function getTodayPassword() {
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const year = today.getFullYear();
+            return day + month + year;
+        }
+
+        const CORRECT_PASSWORD = getTodayPassword();
 
         // =========================
         // שאלות לדוגמה לכל קורס
@@ -825,6 +1044,148 @@
         };
 
         // =========================
+        // פונקציות אבטחה
+        // =========================
+        function checkLogin() {
+            const isLoggedIn = sessionStorage.getItem('learningCenterLoggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('loginOverlay').style.display = 'none';
+                document.body.style.overflow = '';
+                return true;
+            }
+            return false;
+        }
+
+        function showLogin() {
+            document.getElementById('loginOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordInput').focus();
+            document.getElementById('loginError').textContent = '';
+            
+            // הצגת הרמז עם התאריך של היום
+            document.getElementById('hintDate').textContent = getTodayPassword();
+        }
+
+        function login(password) {
+            if (password === CORRECT_PASSWORD) {
+                sessionStorage.setItem('learningCenterLoggedIn', 'true');
+                document.getElementById('loginOverlay').style.display = 'none';
+                document.body.style.overflow = '';
+                return true;
+            }
+            return false;
+        }
+
+        // מניעת העתקה
+        function preventCopy(e) {
+            e.preventDefault();
+            const toast = document.getElementById('copyToast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+            return false;
+        }
+
+        // מניעת צפייה בקוד מקור
+        function preventViewSource() {
+            // חסימת קיצורי דרך
+            document.addEventListener('keydown', function(e) {
+                // חסימת Ctrl+U (צפייה בקוד מקור)
+                if (e.ctrlKey && e.keyCode === 85) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+Shift+I (כלי מפתח)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת F12
+                if (e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+Shift+J
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+S (שמירה)
+                if (e.ctrlKey && e.keyCode === 83) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+C (העתקה)
+                if (e.ctrlKey && e.keyCode === 67) {
+                    preventCopy(e);
+                    return false;
+                }
+                // חסימת Ctrl+X (גזירה)
+                if (e.ctrlKey && e.keyCode === 88) {
+                    preventCopy(e);
+                    return false;
+                }
+                // חסימת Ctrl+V (הדבקה) - לא חסום לגמרי, אבל נתעד
+                if (e.ctrlKey && e.keyCode === 86) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+A (בחירת הכל)
+                if (e.ctrlKey && e.keyCode === 65) {
+                    e.preventDefault();
+                    return false;
+                }
+                // חסימת Ctrl+P (הדפסה)
+                if (e.ctrlKey && e.keyCode === 80) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // חסימת תפריט הקליק הימני
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // חסימת העתקה דרך העכבר
+            document.addEventListener('copy', preventCopy);
+            document.addEventListener('cut', preventCopy);
+            document.addEventListener('paste', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // חסימת גרירת תמונות
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('dragstart', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
+
+            // ניסיון נוסף לחסימת כלי מפתח
+            setInterval(function() {
+                if (window.devtools && window.devtools.open) {
+                    window.location.reload();
+                }
+            }, 1000);
+        }
+
+        // בדיקה אם כלי מפתח פתוחים
+        function detectDevTools() {
+            const threshold = 160;
+            setInterval(function() {
+                if (window.outerWidth - window.innerWidth > threshold || 
+                    window.outerHeight - window.innerHeight > threshold) {
+                    document.body.innerHTML = '<h1 style="text-align:center;margin-top:50px;color:red;">גישה לא מורשית</h1>';
+                }
+            }, 1000);
+        }
+
+        // =========================
         // IndexedDB
         // =========================
         function openDatabase() {
@@ -964,6 +1325,14 @@
             for (const q of questions) container.innerHTML += createQuestionHTML(q);
             attachSolutionEvents();
             attachImageClickEvents();
+            
+            // הוספת אירועי הגנה לתמונות החדשות
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('dragstart', function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
         }
 
         function createQuestionHTML(question) {
@@ -1075,6 +1444,16 @@
             page.style.animation = 'slideIn 0.3s ease';
             page.style.display = 'block';
             document.body.style.overflow = 'hidden';
+            
+            // הוספת הגנה לתמונות בדף הפרטים
+            setTimeout(() => {
+                document.querySelectorAll('#question-detail-page img').forEach(img => {
+                    img.addEventListener('dragstart', function(e) {
+                        e.preventDefault();
+                        return false;
+                    });
+                });
+            }, 100);
         }
 
         function closeQuestionDetail() {
@@ -1145,7 +1524,37 @@
         // אתחול
         // =========================
         document.addEventListener('DOMContentLoaded', async function () {
-            await loadData();
+            // הצגת הרמז עם התאריך הנוכחי
+            document.getElementById('hintDate').textContent = getTodayPassword();
+            
+            // הפעלת מניעת העתקה
+            preventViewSource();
+            detectDevTools();
+            
+            // בדיקת התחברות
+            if (!checkLogin()) {
+                showLogin();
+            } else {
+                await loadData();
+            }
+
+            // טיפול בהתחברות
+            document.getElementById('loginBtn').addEventListener('click', function() {
+                const password = document.getElementById('passwordInput').value;
+                if (login(password)) {
+                    loadData();
+                } else {
+                    document.getElementById('loginError').textContent = 'סיסמה שגויה';
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordInput').focus();
+                }
+            });
+
+            document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('loginBtn').click();
+                }
+            });
 
             // "עיין בקורסים" — תמיד חוזר לדף הנושאים
             document.getElementById('explore-topics-btn').addEventListener('click', () => {
